@@ -21,6 +21,10 @@ export const register = (req, res, next) => {
     }).catch((err) => {
       next(err)
     });
+}
 
+export const logout = (req, res, next) => {
+  
   return res.json({ ok: true });
+
 }

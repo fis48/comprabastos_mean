@@ -1,15 +1,16 @@
 import express from "express";
-import appRouter from "./routes/app.router.js"
+import usersRouter from "./routes/users.router.js"
 import { connectDb } from "./database/config.js";
+import adminRouter from "./routes/admin.router.js";
 
 const port = 8000
 
 const app = express()
 app.use(express.json())
 
-
-
-app.use('/api', appRouter)
+//  routes
+app.use('/api', usersRouter)
+app.use('/api', adminRouter)
 
 // error handling
 app.use((err, req, res, next) => {
