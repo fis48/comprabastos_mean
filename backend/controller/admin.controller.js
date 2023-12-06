@@ -5,8 +5,10 @@ export const createProduct = (req, res, next) => {
 
   const { price, name } = req.body
   let prices = []
-  price.date = new Date().getTime()
-  prices = [...prices, price]
+  let newPrice = {}
+  newPrice.date = new Date().getTime()
+  newPrice.value = price
+  prices = [...prices, newPrice]
 
   const product = new AdminProductModel({
     name,

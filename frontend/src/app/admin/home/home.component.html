@@ -1,0 +1,17 @@
+<p>Admin home</p>
+<button>
+  Nuevo producto
+</button>
+
+<div *ngIf="showForm">
+  <product-form></product-form>
+</div>
+
+<div>
+  <div *ngFor="let product of adminProducts" class="flex">
+    <p>{{ product.name }}</p>
+    <div *ngFor="let price of product.prices" class="flex">
+      <p>{{ price.date | date: 'EE dd' }}</p>
+    </div>
+  </div>
+</div>

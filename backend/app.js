@@ -2,10 +2,12 @@ import express from "express";
 import usersRouter from "./routes/users.router.js"
 import { connectDb } from "./database/config.js";
 import adminRouter from "./routes/admin.router.js";
+import cors from "cors"
 
 const port = 8000
 
 const app = express()
+app.use(cors())
 app.use(express.json())
 
 //  routes
