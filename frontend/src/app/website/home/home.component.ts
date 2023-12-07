@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ComprabastosService } from '../../services/comprabastos.service';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.sass']
 })
 export class HomeComponent {
+  private cbService = inject(ComprabastosService)
+
+  constructor() {
+    this.cbService.getAdminProducts().subscribe(() => {
+
+      console.log(this.cbService.adminProducts())
+
+    })
+
+
+
+
+
+  }
 
 }

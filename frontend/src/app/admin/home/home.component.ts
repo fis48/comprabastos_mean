@@ -18,11 +18,11 @@ export class HomeComponent {
   constructor() {
     
     
-    this.cbservice.getAdminProducts().subscribe((products:any) => {
-      this.adminProducts = products
+    // this.cbservice.getAdminProducts().subscribe((products:any) => {
+    //   this.adminProducts = products
       
-      console.log(products)
+    //   console.log(products)
 
-    })
+    // })
   }
 }
