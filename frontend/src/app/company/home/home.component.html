@@ -1,9 +1,42 @@
 <h1>Company</h1>
+<nav>
+  <button (click)="toggleCreatingOrder()">
+    Iniciar pedido
+  </button>
+</nav>
 
 <app-search></app-search>
 
 <div>
   <div *ngFor="let product of adminProducts" class="flex">
-    <p>{{ product.name }}</p>
+    <p>{{ product.name }} - {{ product.avgPrice }}</p>
+    <div class="flex">
+      <div *ngFor="let price of product.prices" class="date-price">
+        <p>{{ price.value }}</p>
+        <p>{{ price.timestamp | date: 'EEEE d' }}</p>
+      </div>
+    </div>
+    
+    <label [for]="product.id">
+      <input type="checkbox" [value]="product.id">
+    </label>
+    <label for="quant">
+      <span>Cantidad</span>
+      <input name="quant" type="text" class="regular-input">
+    </label>
+    <label for="units">
+      <select name="units">
+        <option value="">Seleccione unidad de medida</option>
+        <option [value]="units.kilo">
+          {{ units.kilo }}
+        </option>
+        <option [value]="units.basket">
+          {{ units.basket }}
+        </option>
+        <option [value]="units.bulk">
+          {{ units.bulk }}
+        </option>
+      </select>
+    </label>
   </div>
 </div>

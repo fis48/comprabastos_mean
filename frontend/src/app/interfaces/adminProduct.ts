@@ -1,7 +1,9 @@
 export interface IProduct {
+  id?: string
   name: string
   prices: [{
-    date: number,
+    timestamp: number,
     value: number
   }]
+  avgPrice?: number
 }

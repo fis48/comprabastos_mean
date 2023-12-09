@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { ComprabastosService } from '../../services/comprabastos.service';
-import { IProduct } from 'src/app/interfaces';
+import { IProduct, Units } from 'src/app/interfaces';
+
 
 @Component({
   selector: 'app-home',
@@ -10,6 +11,8 @@ import { IProduct } from 'src/app/interfaces';
 export class HomeComponent {
   private cbService = inject(ComprabastosService)
   public adminProducts:IProduct[] = []
+  public showCreateOrder:boolean = false
+  public units = Units
 
   constructor() {
     const adminProducts = this.cbService.adminProducts()
@@ -22,6 +25,10 @@ export class HomeComponent {
     else {
       this.adminProducts = adminProducts
     }
+  }
+
+  toggleCreatingOrder(){
+    this.showCreateOrder = !this.showCreateOrder
   }
 
 }

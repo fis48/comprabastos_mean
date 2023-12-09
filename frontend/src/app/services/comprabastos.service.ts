@@ -3,7 +3,7 @@ import { Injectable, inject, signal } from '@angular/core';
 import { environment } from "../../environments/environment.development";
 
 import { IProduct } from '../interfaces';
-import { Observable, tap } from 'rxjs';
+import { map, tap } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,10 +14,29 @@ export class ComprabastosService {
 
   getAdminProducts() {
     return this.http.get(`${environment.localBackendUri}/admin-products`).pipe(
-      tap((resp:any) => {
-        this.adminProducts.set(resp)
+      map((resp:any) => {
+        const products = resp.map((product:IProduct) => {
+          return this.handleProduct(product)
+        })
+        this.adminProducts.set(products)
+        return products
       })
     )
+  }
+
+  handleProduct(product:IProduct) {
+    let ap = 0
+    const productClone:any = { ...product }
+    if (productClone.prices.length === 1) {
+      ap = product.prices[0].value
+    }
+    else {
+      ap = productClone.prices.reduce((a:any, b: any) => { 
+        return (a.value + b.value) / product.prices.length 
+      })
+    }
+    productClone.avgPrice = ap
+    return productClone
   }
 
   saveNewProduct(insData:IProduct) {

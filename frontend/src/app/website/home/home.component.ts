@@ -1,5 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { ComprabastosService } from '../../services/comprabastos.service';
+import { IProduct } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-home',
@@ -8,18 +9,12 @@ import { ComprabastosService } from '../../services/comprabastos.service';
 })
 export class HomeComponent {
   private cbService = inject(ComprabastosService)
+  public adminProducts:IProduct[] = []
 
   constructor() {
     this.cbService.getAdminProducts().subscribe(() => {
-
-      console.log(this.cbService.adminProducts())
-
+      this.adminProducts = this.cbService.adminProducts()
     })
-
-
-
-
-
   }
 
 }

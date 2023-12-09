@@ -11,7 +11,7 @@
   <div *ngFor="let product of adminProducts" class="flex">
     <p>{{ product.name }}</p>
     <div *ngFor="let price of product.prices" class="flex">
-      <p>{{ price.date | date: 'EE dd' }}</p>
+      <p>{{ price.timestamp | date: 'EE dd' }}</p>
     </div>
   </div>
 </div>

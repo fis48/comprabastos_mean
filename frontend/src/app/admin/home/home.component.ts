@@ -10,19 +10,21 @@ import { IProduct } from 'src/app/interfaces';
 })
 
 export class HomeComponent {
-  private cbservice:ComprabastosService = inject(ComprabastosService)
+  private cbService:ComprabastosService = inject(ComprabastosService)
   
   adminProducts:IProduct[] = []
   showForm:boolean = true
 
   constructor() {
-    
-    
-    // this.cbservice.getAdminProducts().subscribe((products:any) => {
-    //   this.adminProducts = products
-      
-    //   console.log(products)
-
-    // })
+    const adminProducts = this.cbService.adminProducts()
+    if (adminProducts.length <= 0) {
+      console.log('Reload products fired')
+      this.cbService.getAdminProducts().subscribe((resp) => {
+        this.adminProducts = resp
+      })      
+    }
+    else {
+      this.adminProducts = adminProducts
+    }
   }
 }
