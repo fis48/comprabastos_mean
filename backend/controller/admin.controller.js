@@ -6,7 +6,7 @@ export const createProduct = (req, res, next) => {
   const { price, name } = req.body
   let prices = []
   let newPrice = {}
-  newPrice.date = new Date().getTime()
+  newPrice.timestamp = new Date().getTime()
   newPrice.value = price
   prices = [...prices, newPrice]
 

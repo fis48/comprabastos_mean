@@ -7,7 +7,7 @@ const AdminProductSchema = new mongoose.Schema({
   },
   prices: [
     { 
-      date: Number,
+      timestamp: Number,
       value: Number
     }
   ],
