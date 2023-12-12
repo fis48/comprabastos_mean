@@ -25,7 +25,8 @@ export class LoginComponent {
 
   handleLogin() {
     this.usersService.login(this.loginForm.value).subscribe((resp:any) => {
-      this.router.navigate([`${ resp.type }`])
+      localStorage.setItem('token', resp.id)
+      this.router.navigate([`${ resp.user.type }`])
     })
   }
 

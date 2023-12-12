@@ -1,1 +1,19 @@
-<p>search works!</p>
+<div class="search-container">
+  <span>Buscar producto</span>
+  <input 
+    type="text"
+    name="searchString"
+    (keyup)="handleSearch($event)"
+    [(ngModel)]="searchString"
+  >
+</div>
+
+<div class="search-result">
+  <span>Resultado de la búsqueda</span>
+  <div *ngFor="let product of foundProducts" class="row">
+    <p>{{ product.name }}</p>
+    <button (click)="hanldeSelected(product)">
+      Agregar a mi lista
+    </button>
+  </div>
+</div>

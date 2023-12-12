@@ -8,10 +8,13 @@
 </div>
 
 <div>
-  <div *ngFor="let product of adminProducts" class="flex">
+  <h2>Productos</h2>
+  <div *ngFor="let product of adminProducts" class="flex justify-around">
     <p>{{ product.name }}</p>
-    <div *ngFor="let price of product.prices" class="flex">
+    <!-- <div *ngFor="let price of product.prices" class="flex">
       <p>{{ price.timestamp | date: 'EE dd' }}</p>
-    </div>
+    </div> -->
+    <p>{{ product.avgPrice }}</p>
+    <button>Actualizar</button>
   </div>
 </div>

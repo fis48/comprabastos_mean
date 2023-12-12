@@ -1,8 +1,10 @@
 import express from "express";
-import usersRouter from "./routes/users.router.js"
 import { connectDb } from "./database/config.js";
-import adminRouter from "./routes/admin.router.js";
 import cors from "cors"
+
+import usersRouter from "./routes/users.router.js"
+import adminRouter from "./routes/admin.router.js";
+import companyRouter from "./routes/company.router.js";
 
 const port = 8000
 
@@ -13,6 +15,7 @@ app.use(express.json())
 //  routes
 app.use('/api', usersRouter)
 app.use('/api', adminRouter)
+app.use('/api', companyRouter)
 
 // error handling
 app.use((err, req, res, next) => {

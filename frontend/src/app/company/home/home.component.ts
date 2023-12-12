@@ -1,6 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { ComprabastosService } from '../../services/comprabastos.service';
 import { IProduct, Units } from 'src/app/interfaces';
+import { Router } from '@angular/router';
+import { ICompany } from '../../interfaces/company';
 
 
 @Component({
@@ -10,11 +12,32 @@ import { IProduct, Units } from 'src/app/interfaces';
 })
 export class HomeComponent {
   private cbService = inject(ComprabastosService)
+  private router = inject(Router)
+
   public adminProducts:IProduct[] = []
+  public logged: ICompany | null = null
+
   public showCreateOrder:boolean = false
   public units = Units
 
   constructor() {
+    this.handleProducts()
+    this.handleCompany()
+  }
+
+  handleCompany() {
+    const loggedId = localStorage.getItem('token')
+    if (loggedId) {
+      this.cbService.getLogged(loggedId, 'company').subscribe(resp => {
+        this.logged = resp
+      })
+    }
+    else {
+      this.router.navigate(['/login'])
+    }
+  }
+
+  handleProducts() {
     const adminProducts = this.cbService.adminProducts()
     if (adminProducts.length <= 0) {
       console.log('Reload products fired')
@@ -24,11 +47,13 @@ export class HomeComponent {
     }
     else {
       this.adminProducts = adminProducts
-    }
+    }    
   }
 
   toggleCreatingOrder(){
     this.showCreateOrder = !this.showCreateOrder
   }
+
+  
 
 }

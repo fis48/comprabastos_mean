@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable, inject, signal } from '@angular/core';
 import { environment } from "../../environments/environment.development";
 
-import { IProduct } from '../interfaces';
+import { ICompany, ICompanyProduct, IProduct } from '../interfaces';
 import { map, tap } from 'rxjs';
 
 @Injectable({
@@ -11,6 +11,7 @@ import { map, tap } from 'rxjs';
 export class ComprabastosService {
   private http:HttpClient = inject(HttpClient)
   public adminProducts = signal<IProduct[]>([])
+  public logged = signal<ICompany | null>(null)
 
   getAdminProducts() {
     return this.http.get(`${environment.localBackendUri}/admin-products`).pipe(
@@ -42,5 +43,18 @@ export class ComprabastosService {
   saveNewProduct(insData:IProduct) {
     return this.http.post(`${environment.localBackendUri}/create-product`, insData)
   }
+
+  getLogged(loggedId:string, type:string) {
+    return this.http.post(`${environment.localBackendUri}/logged-${type}`, { loggedId }).pipe(
+      tap((resp:any) => {
+        this.logged.set(resp)
+      })
+    )
+  }
+
+  updateCompanyList(list:ICompanyProduct[], companyId:string) {
+    return this.http.patch(`${environment.localBackendUri}/company-list`, { companyId, list })
+  }
+  
   
 }

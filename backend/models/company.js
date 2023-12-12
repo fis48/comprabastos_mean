@@ -9,10 +9,25 @@ const CompanySchema = new mongoose.Schema({
   products: {
     type: [
       {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Product'
+        id: {
+          type: String
+        },
+        name: {
+          type: String
+        }
       }
     ]
+  }
+},
+{
+  toJSON: {
+    virtuals: true,
+    transform: (doc, ret) => {
+      delete ret.__v
+      delete ret._id
+      ret.id = doc._id
+      return ret
+    }
   }
 })
 

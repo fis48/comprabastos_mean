@@ -1,0 +1,31 @@
+<div *ngIf="company">
+  <h1>Mi lista</h1>
+  <h2>{{ company.user.name }}</h2>
+  <button routerLink="/company">
+    Volver
+  </button>
+  <button (click)="toggleCreatingOrder()">
+    Crear pedido
+  </button>
+
+  <app-search
+    [adminProducts]="adminProducts"
+    (sendSelected)="addToList($event)"
+  ></app-search>
+
+  <h2>Mis productos</h2>
+  <div *ngFor="let product of company.products" class="row">
+    <p>{{ product.name }}</p>
+    <button (click)="removeFromList(product)">
+      Eliminar
+    </button>
+    <div *ngIf="creatingOrder" class="order-info flex">
+      <input type="checkbox" (change)="handleOrderList($event, product)">
+      <label for="quant">
+        <span>Cantidad</span>
+        <input type="number" name="quant" (change)="handleItemQuant($event, product)">
+      </label>
+    </div>
+  </div>
+
+</div>

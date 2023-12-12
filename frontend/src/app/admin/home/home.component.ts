@@ -21,6 +21,8 @@ export class HomeComponent {
       console.log('Reload products fired')
       this.cbService.getAdminProducts().subscribe((resp) => {
         this.adminProducts = resp
+
+        console.log(this.adminProducts)
       })      
     }
     else {

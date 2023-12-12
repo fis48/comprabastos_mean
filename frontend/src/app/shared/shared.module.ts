@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SearchComponent } from './search/search.component';
 import { TopComponent } from './top/top.component';
 import { ItemsTableComponent } from './items-table/items-table.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -13,7 +14,8 @@ import { ItemsTableComponent } from './items-table/items-table.component';
     ItemsTableComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     SearchComponent,
