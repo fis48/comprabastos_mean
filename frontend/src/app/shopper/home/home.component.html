@@ -1,1 +1,11 @@
-<p>Shopper home</p>
+
+<div class="companies-container">
+  <div *ngFor="let company of companies" class="flex">
+    <p>
+      {{ company.name }}
+    </p>
+    <button [routerLink]="['/shopper/quote', company.id]">
+      Cotizar a esta empresa
+    </button>
+  </div>
+</div>

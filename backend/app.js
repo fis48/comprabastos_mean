@@ -5,6 +5,7 @@ import cors from "cors"
 import usersRouter from "./routes/users.router.js"
 import adminRouter from "./routes/admin.router.js";
 import companyRouter from "./routes/company.router.js";
+import shopperRouter from "./routes/shopper.routes.js";
 
 const port = 8000
 
@@ -16,6 +17,7 @@ app.use(express.json())
 app.use('/api', usersRouter)
 app.use('/api', adminRouter)
 app.use('/api', companyRouter)
+app.use('/api', shopperRouter)
 
 // error handling
 app.use((err, req, res, next) => {

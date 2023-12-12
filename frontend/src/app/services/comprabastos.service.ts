@@ -56,5 +56,8 @@ export class ComprabastosService {
     return this.http.patch(`${environment.localBackendUri}/company-list`, { companyId, list })
   }
   
+  getCompanies() {
+    return this.http.get(`${environment.localBackendUri}/companies`)
+  }
   
 }

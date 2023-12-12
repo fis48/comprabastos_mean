@@ -1,8 +1,8 @@
 import express from "express"
-import { createShopper } from "../controller/shopper.controller.js"
+import { getCompanies } from "../controller/shopper.controller.js"
 
 const shopperRouter = express.Router()
 
-shopperRouter.post('/shopper', createShopper)
+shopperRouter.get('/companies', getCompanies)
 
 export default shopperRouter
