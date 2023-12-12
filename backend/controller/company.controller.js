@@ -1,9 +1,8 @@
-import CompanyModel from "../models/company.js"
+import UserModel from "../models/user.js";
 
 export const getCompany = (req, res, next) => {
   const { loggedId } = req.body
-  CompanyModel.findById(loggedId)
-    .populate('user')
+  UserModel.findById(loggedId)
     .then((result) => {
       return res.json(result)
     }).catch((err) => {
@@ -13,7 +12,7 @@ export const getCompany = (req, res, next) => {
 
 export const updateCompanyList = (req, res, next) => {
   const { companyId, list } = req.body
-  CompanyModel.findByIdAndUpdate(companyId, { products: list }, { new: true })
+  UserModel.findByIdAndUpdate(companyId, { products: list }, { new: true })
     .then((result) => {
       return res.json(result);
     }).catch((err) => {

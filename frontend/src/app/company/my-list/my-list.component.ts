@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { ComprabastosService } from '../../services/comprabastos.service';
-import { ICompany, ICompanyProduct, IProduct } from 'src/app/interfaces';
+import { IUserItems, IProduct, IUser } from 'src/app/interfaces';
 
 @Component({
   selector: 'app-my-list',
@@ -11,7 +11,7 @@ export class MyListComponent {
   private cbService = inject(ComprabastosService)
   
   public adminProducts:IProduct[] = []
-  public company: ICompany | null = null
+  public company: IUser | null = null
   public creatingOrder: boolean = false
   public orderList: IProduct[] = []
 
@@ -33,7 +33,7 @@ export class MyListComponent {
     const logged = this.cbService.logged()
     const loggedId = localStorage.getItem('token')
     if (!logged && loggedId) {
-      this.cbService.getLogged(loggedId, 'company').subscribe((resp) => {
+      this.cbService.getLogged(loggedId).subscribe((resp) => {
         this.cbService.logged.set(resp)
         this.company = resp
       })
@@ -44,14 +44,17 @@ export class MyListComponent {
   }
 
   addToList(selected:IProduct) {
+    let list:IUserItems[] = []
     if (this.company && this.company.id && selected.id ) {
-      let list:ICompanyProduct[] = this.company.products
+      if (this.company.products) {
+        list = this.company.products
+      }
       const exist = list.some(item => item.id === selected.id)
-
       if (!exist) {
         list = [ ...list, { id: selected.id, name: selected.name } ]
-        this.cbService.updateCompanyList(list, this.company.id).subscribe(resp => {
-          this.company = resp as ICompany
+        this.cbService.updateCompanyList(list, this.company.id)
+        .subscribe(resp => {
+          this.company = resp as IUser
         })
       }
       else {
@@ -60,12 +63,13 @@ export class MyListComponent {
     }
   }
 
-  removeFromList(selected:ICompanyProduct) {
-    if (this.company && this.company.id) {
+  removeFromList(selected:IUserItems) {
+    if (this.company && this.company.id && this.company.products) {
       const newList = this.company.products.filter(item => item.id !== selected.id)
-      this.cbService.updateCompanyList(newList, this.company.id).subscribe((resp: any) => {
-        this.company = resp
-      })
+      this.cbService.updateCompanyList(newList, this.company.id)
+      // .subscribe((resp: any) => {
+      //   this.company = resp
+      // })
     }
   }
 

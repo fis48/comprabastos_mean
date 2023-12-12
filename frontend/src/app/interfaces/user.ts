@@ -1,4 +1,7 @@
+import { IUserItems } from "./userItems"
+
 export interface IUser {
+  id?: string
   address: string
   email: string
   name: string
@@ -6,4 +9,6 @@ export interface IUser {
   whatsapp: string
   status: string
   type: string
+  products?: IUserItems[]
+  companies?: IUser[]
 }

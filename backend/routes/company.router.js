@@ -3,7 +3,7 @@ import { getCompany, updateCompanyList } from '../controller/company.controller.
 
 const companyRouter = express.Router()
 
-companyRouter.post('/logged-company', getCompany)
+companyRouter.post('/logged', getCompany)
 companyRouter.patch('/company-list', updateCompanyList)
 
 

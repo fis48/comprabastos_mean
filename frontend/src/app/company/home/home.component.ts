@@ -1,8 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { ComprabastosService } from '../../services/comprabastos.service';
-import { IProduct, Units } from 'src/app/interfaces';
+import { IProduct, IUser, Units } from 'src/app/interfaces';
 import { Router } from '@angular/router';
-import { ICompany } from '../../interfaces/company';
 
 
 @Component({
@@ -15,7 +14,7 @@ export class HomeComponent {
   private router = inject(Router)
 
   public adminProducts:IProduct[] = []
-  public logged: ICompany | null = null
+  public logged: IUser | null = null
 
   public showCreateOrder:boolean = false
   public units = Units
@@ -28,7 +27,7 @@ export class HomeComponent {
   handleCompany() {
     const loggedId = localStorage.getItem('token')
     if (loggedId) {
-      this.cbService.getLogged(loggedId, 'company').subscribe(resp => {
+      this.cbService.getLogged(loggedId).subscribe(resp => {
         this.logged = resp
       })
     }

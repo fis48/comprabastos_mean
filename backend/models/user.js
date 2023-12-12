@@ -31,6 +31,14 @@ const userShema = new mongoose.Schema({
   },
   type: {
     type: String
+  },
+  companies: {
+    type: Array,
+    default: []
+  },
+  products: {
+    type: Array,
+    default: []
   }
 },
 {
