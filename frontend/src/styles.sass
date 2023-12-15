@@ -2,5 +2,30 @@
 @tailwind components
 @tailwind utilities
 
+$primary: #81A737
+
+body
+  background-color: #F9FAFB
+  @apply text-sm
+
+button
+  @apply px-10 py-3 shadow-md rounded-md text-sm
+
+.regular
+    color: #81A737
+    font-weight: bold
+
 .main-container
-  @apply p-10
+  @apply p-10 flex flex-col
+
+.table-container
+  display: flex
+  flex-direction: column
+  margin: 0 auto
+  @apply mt-5 px-10 py-3 shadow-md bg-white rounded-lg w-11/12
+  .row
+    @apply flex justify-between border-b py-4 text-xs last:border-0
+
+.page-title
+  color: $primary
+  @apply font-bold 

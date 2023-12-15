@@ -11,7 +11,7 @@ export class ItemsTableComponent {
 
   constructor() {
 
-    console.log('constructor', this.items)
+    // console.log('constructor', this.items)
 
   }
 
@@ -19,7 +19,7 @@ export class ItemsTableComponent {
     if (this.items.length > 0) {
       
     }
-    console.log('init', this.items)
+    // console.log('init', this.items)
 
   }
 }
