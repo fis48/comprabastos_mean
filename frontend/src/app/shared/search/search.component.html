@@ -5,15 +5,20 @@
     name="searchString"
     (keyup)="handleSearch($event)"
     [(ngModel)]="searchString"
+    class="form-control"
   >
+
+  <div *ngIf="foundProducts.length > 0" class="search-result">
+    <span class="page-title">
+      Resultado de la búsqueda
+    </span>
+    <div *ngFor="let product of foundProducts" class="found-row">
+      <p>{{ product.name }}</p>
+      <button (click)="hanldeSelected(product)">
+        Agregar a mi lista
+      </button>
+    </div>
+  </div>  
+
 </div>
 
-<div class="search-result">
-  <span>Resultado de la búsqueda</span>
-  <div *ngFor="let product of foundProducts" class="row">
-    <p>{{ product.name }}</p>
-    <button (click)="hanldeSelected(product)">
-      Agregar a mi lista
-    </button>
-  </div>
-</div>

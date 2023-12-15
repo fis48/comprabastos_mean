@@ -15,11 +15,11 @@ export class ItemsTableComponent {
 
   }
 
-  ngAfterViewChecked(): void {
-    if (this.items.length > 0) {
+  // ngAfterViewChecked(): void {
+  //   if (this.items.length > 0) {
       
-    }
-    // console.log('init', this.items)
+  //   }
+  //   // console.log('init', this.items)
 
-  }
+  // }
 }

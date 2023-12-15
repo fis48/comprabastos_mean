@@ -1,19 +1,14 @@
-<h1>Company</h1>
-<nav>
-  <button routerLink="/company/list">
-    Mi lista
-  </button>
-</nav>
+<div class="main-container">
 
+  <h1>Company</h1>
+  <nav>
+    <button routerLink="/company/list">
+      Mi lista
+    </button>
+  </nav>
 
-<div>
-  <div *ngFor="let product of adminProducts" class="flex">
-    <p>{{ product.name }} - {{ product.avgPrice }}</p>
-    <div class="flex">
-      <div *ngFor="let price of product.prices" class="date-price">
-        <p>{{ price.value }}</p>
-        <p>{{ price.timestamp | date: 'EEEE d' }}</p>
-      </div>
-    </div>    
-  </div>
+  <app-items-table 
+    [items]="adminProducts"
+  ></app-items-table>
+
 </div>

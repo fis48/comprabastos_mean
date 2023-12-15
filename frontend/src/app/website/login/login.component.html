@@ -1,23 +1,29 @@
-<form [formGroup]="loginForm" (ngSubmit)="handleLogin()">
-  <label for="email">
-    <span>Email</span>
-    <input 
-      type="email"
-      name="email"
-      formControlName="email"
-    >
-  </label>
-
-  <label for="password">
-    <span>Contraseña</span>
-    <input 
-      type="password"
-      name="password"
-      formControlName="password"
-    >
-  </label>
-
-  <button type="submit">
-    Enviar
-  </button>
-</form>
+<div class="main-container">
+  <div class="form-container">
+    <form [formGroup]="loginForm" (ngSubmit)="handleLogin()">
+      <label for="email">
+        <span>Email</span>
+        <input 
+          type="email"
+          name="email"
+          formControlName="email"
+          class="form-control"
+        >
+      </label>
+    
+      <label for="password">
+        <span>Contraseña</span>
+        <input 
+          type="password"
+          name="password"
+          formControlName="password"
+          class="form-control"
+        >
+      </label>
+    
+      <button type="submit">
+        Enviar
+      </button>
+    </form>
+  </div>
+</div>

@@ -9,7 +9,15 @@ body
   @apply text-sm
 
 button
-  @apply px-10 py-3 shadow-md rounded-md text-sm
+  color: $primary
+  @apply px-10 py-3 shadow-md rounded-md text-xs font-bold 
+
+label span
+  display: block
+  @apply text-xs mb-1
+
+.form-control
+  @apply w-full py-2 px-4 rounded shadow mb-3
 
 .regular
     color: #81A737
@@ -28,4 +36,18 @@ button
 
 .page-title
   color: $primary
-  @apply font-bold 
+  @apply font-bold
+  
+.form-container
+  @apply w-6/12 m-auto
+  form
+    @apply py-5 px-8 rounded flex flex-col
+
+.row
+  border-bottom: 1px solid #e5e5e5
+  @apply flex justify-between py-1
+  p
+    line-height: 4
+    font-size: 12px
+
+
