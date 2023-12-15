@@ -1,9 +1,14 @@
 <div class="main-container">
 
-  <h1>Company</h1>
+  <h1 *ngIf="logged" class="page-title text-2xl mb-1">
+    {{ logged.name }}
+  </h1>
   <nav>
     <button routerLink="/company/list">
       Mi lista
+    </button>
+    <button routerLink="/">
+      Volver
     </button>
   </nav>
 

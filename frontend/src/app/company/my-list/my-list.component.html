@@ -1,10 +1,13 @@
 <div *ngIf="company" class="main-container">
   <h1 class="page-title text-2xl">Mi lista</h1>
-  <h2>{{ company.name }}</h2>
+  <h2 class="mb-5">{{ company.name }}</h2>
 
   <div class="flex">
     <button routerLink="/company">
       Volver
+    </button>
+    <button (click)="toggleCreatingOrder()">
+      Crear pedido
     </button>
   </div>
 
@@ -14,26 +17,34 @@
   ></app-search>
 
   <h2 class="page-title text-lg">Mis productos</h2>
-  <button (click)="toggleCreatingOrder()">
-    Crear pedido
-  </button>
-
-  <div *ngFor="let product of company.products" class="row mt-5">
-    <p>{{ product.name }}</p>
-    <div *ngIf="creatingOrder" class="order-info flex">
-      <input 
-        type="checkbox" 
-        (change)="handleOrderList($event, product)"
-        class="mr-4"
-      >
-      <label for="quant" class="flex py-2">
-        <span class="mt-2 mr-2">Cantidad</span>
-        <input type="number" name="quant" (change)="handleItemQuant($event, product)">
-      </label>
-    </div>
-    <button (click)="removeFromList(product)">
-      Eliminar
-    </button>
+  <div class="table-container">
+    <div *ngFor="let product of company.products" class="row">
+      <p class="w-3/12">{{ product.name }}</p>
+      <div class="w-4/12" *ngIf="creatingOrder" 
+        class="order-info flex content-center justify-around">
+        <input 
+          type="checkbox" 
+          (change)="handleOrderList($event, product)"
+          class="mr-4"
+        >
+        <input 
+          type="number" 
+          name="quant" 
+          (change)="handleItemQuant($event, product)"
+          class="form-control"
+          value="0"
+        >
+      </div>
+      <button *ngIf="!creatingOrder" (click)="removeFromList(product)">
+        Eliminar
+      </button>
+    </div> 
+    <button *ngIf="creatingOrder" 
+      class="my-5"
+      (click)="sendOrder()"
+    >
+      Enviar pedido
+    </button>  
   </div>
 
 </div>

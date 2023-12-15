@@ -9,17 +9,4 @@ import { IProduct } from 'src/app/interfaces';
 export class ItemsTableComponent {
   @Input() items:IProduct[] = []
 
-  constructor() {
-
-    // console.log('constructor', this.items)
-
-  }
-
-  // ngAfterViewChecked(): void {
-  //   if (this.items.length > 0) {
-      
-  //   }
-  //   // console.log('init', this.items)
-
-  // }
 }

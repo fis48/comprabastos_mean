@@ -12,6 +12,7 @@ export class ComprabastosService {
   private http:HttpClient = inject(HttpClient)
   public adminProducts = signal<IProduct[]>([])
   public logged = signal<IUser | null>(null)
+  public onGoingOrder = signal<any>([])
 
   getAdminProducts() {
     return this.http.get(`${environment.localBackendUri}/admin-products`).pipe(

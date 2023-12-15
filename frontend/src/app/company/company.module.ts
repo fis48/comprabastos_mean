@@ -6,12 +6,14 @@ import { HomeComponent } from './home/home.component';
 import { SearchComponent } from '../shared/search/search.component';
 import { SharedModule } from '../shared/shared.module';
 import { MyListComponent } from './my-list/my-list.component';
+import { OrderComponent } from './order/order.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
-    MyListComponent
+    MyListComponent,
+    OrderComponent
   ],
   imports: [
     CommonModule,

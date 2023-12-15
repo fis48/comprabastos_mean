@@ -10,14 +10,14 @@ body
 
 button
   color: $primary
-  @apply px-10 py-3 shadow-md rounded-md text-xs font-bold 
+  @apply px-10 py-2 shadow-md rounded-md text-xs font-bold 
 
 label span
   display: block
   @apply text-xs mb-1
 
 .form-control
-  @apply w-full py-2 px-4 rounded shadow mb-3
+  @apply w-full py-2 px-4 rounded shadow
 
 .regular
     color: #81A737
@@ -30,9 +30,17 @@ label span
   display: flex
   flex-direction: column
   margin: 0 auto
-  @apply mt-5 px-10 py-3 shadow-md bg-white rounded-lg w-11/12
+  @apply mt-5 px-10 py-3 shadow-md bg-white rounded-lg w-full
   .row
-    @apply flex justify-between border-b py-4 text-xs last:border-0
+    @apply flex justify-between border-b text-xs last:border-0 py-4 rounded
+    &:hover 
+      background-color: #eee
+      @apply px-5 font-bold
+    p
+      line-height: 40px
+    button
+      @apply shadow-none
+      margin-bottom: 0
 
 .page-title
   color: $primary
@@ -43,11 +51,6 @@ label span
   form
     @apply py-5 px-8 rounded flex flex-col
 
-.row
-  border-bottom: 1px solid #e5e5e5
-  @apply flex justify-between py-1
-  p
-    line-height: 4
-    font-size: 12px
+
 
 

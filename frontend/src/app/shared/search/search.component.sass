@@ -1,19 +1,21 @@
 .search-container
-    @apply shadow py-5 px-10 rounded
     span
         display: block
         @apply mb-1
+    @apply py-5 rounded
 
 .found-row
-    @apply flex justify-between space-y-2
+    @apply flex justify-between
     button
-        @apply text-xs
+        @apply text-xs py-1
     p
         @apply text-xs
-        line-height: 5
+        line-height: 4
     &:hover
-        // background-color: #eee
-        @apply px-5 rounded
+        background-color: #eee
+        @apply pl-5 rounded
+        button
+            @apply shadow-none
 
 
 

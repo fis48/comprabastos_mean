@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { ComprabastosService } from '../../services/comprabastos.service';
 import { IUserItems, IProduct, IUser } from 'src/app/interfaces';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-my-list',
@@ -9,6 +10,7 @@ import { IUserItems, IProduct, IUser } from 'src/app/interfaces';
 })
 export class MyListComponent {
   private cbService = inject(ComprabastosService)
+  private router = inject(Router)
   
   public adminProducts:IProduct[] = []
   public company: IUser | null = null
@@ -96,8 +98,12 @@ export class MyListComponent {
         this.orderList[i] = it
       }
     })
+  }
 
-    console.warn('Order handling :)', this.orderList)
+  sendOrder() {
+    this.cbService.onGoingOrder.set(this.orderList)
+    this.router.navigate(['/company/order'])
+    
 
   }
 }
