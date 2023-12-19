@@ -21,7 +21,6 @@ export class HomeComponent {
       this.cbService.getLogged(loggedId).subscribe((resp:any) => {
         this.cbService.logged.set(resp)
       })
-    } 
-
+    }
   }
 }

@@ -4,6 +4,7 @@ import { environment } from "../../environments/environment.development";
 
 import { IUserItems, IProduct, IUser } from '../interfaces';
 import { map, tap } from 'rxjs';
+import { IQuote } from '../interfaces/quote';
 
 @Injectable({
   providedIn: 'root'
@@ -60,5 +61,18 @@ export class ComprabastosService {
   getCompanies() {
     return this.http.get(`${environment.localBackendUri}/companies`)
   }
+
+  getCompany(companyId: string) {
+    return this.http.get(`${environment.localBackendUri}/company/${companyId}`)
+  }
+
+  updateQuote(quote:IQuote) {
+    return this.http.post(`${environment.localBackendUri}/quote`, quote)
+  }
+  
+  getQuotes(companyId: string) {
+    return this.http.get(`${environment.localBackendUri}/quotes/${companyId}`)
+  }
+  
   
 }

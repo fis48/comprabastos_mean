@@ -1,1 +1,31 @@
-<p>quote works!</p>
+<div *ngIf="company && shopper" class="main-container">
+    <h1 class="page-title text-2xl">
+        {{ company.name }}
+    </h1>
+    <h2 class="font-bold">
+        {{ shopper.name }}
+    </h2>
+
+    <input 
+        type="date"
+        name="dueData"
+        (change)="handleDate($event)"
+        class="form-control"
+    >
+
+    <div class="list-container">
+        <div *ngFor="let product of company.products" class="row">
+            <p>{{ product.name }}</p>
+            <input 
+                type="number"
+                name="price"
+                class="form-control"
+                (change)="handleQuote($event, product)"
+            >
+        </div>
+        <button *ngIf="validData" (click)="saveQuote()">
+            Guardar
+        </button>
+    </div>
+</div>
+

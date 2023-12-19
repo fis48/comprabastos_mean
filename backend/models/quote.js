@@ -2,14 +2,16 @@ import mongoose from "mongoose";
 
 const QuoteSchema = new mongoose.Schema({
 
-  shopper: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Shopper',
+  shopperId: {
+    type: String,
     required: true
   },
-  company: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Company',
+  shopperName: {
+    type: String,
+    required: true
+  },
+  companyId: {
+    type: String,
     required: true
   },
   dueDate: {
@@ -18,13 +20,15 @@ const QuoteSchema = new mongoose.Schema({
   },
   products: [
     {
-      product: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Product',
+      productId: {
+        type: String,
       },
-      price: {
+      productName: {
+        type: String
+      },
+      value: {
         type: Number
-      }
+      },
     }
   ]
 

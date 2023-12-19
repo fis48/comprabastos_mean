@@ -1,10 +1,11 @@
 import express from 'express'
-import { getCompany, updateCompanyList } from '../controller/company.controller.js'
+import { getCompanyQuotes, getLoggedUser, updateCompanyList } from '../controller/company.controller.js'
 
 const companyRouter = express.Router()
 
-companyRouter.post('/logged', getCompany)
+companyRouter.post('/logged', getLoggedUser)
 companyRouter.patch('/company-list', updateCompanyList)
+companyRouter.get('/quotes/:companyId', getCompanyQuotes)
 
 
 
