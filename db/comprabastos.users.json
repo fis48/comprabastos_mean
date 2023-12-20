@@ -1,0 +1,92 @@
+[{
+  "_id": {
+    "$oid": "657a5b961614d627b7876024"
+  },
+  "address": "Calle 42",
+  "email": "admin@mail.com",
+  "name": "Webmaster",
+  "phone": "300",
+  "whatsapp": "300",
+  "status": "ON_HOLD",
+  "type": "admin",
+  "companies": [],
+  "products": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a5c9f1614d627b787604b"
+  },
+  "address": "Calle 43",
+  "email": "company1@mail.com",
+  "name": "Empresa 1",
+  "phone": "301",
+  "whatsapp": "301",
+  "status": "ON_HOLD",
+  "type": "company",
+  "companies": null,
+  "products": [
+    {
+      "id": "657a5c001614d627b7876028",
+      "name": "Tomate verde kilo"
+    },
+    {
+      "id": "657a5c461614d627b7876031",
+      "name": "Cebolla junca kilo"
+    },
+    {
+      "id": "657a5c1d1614d627b787602b",
+      "name": "Tomate verde canastilla"
+    },
+    {
+      "id": "657a5c6f1614d627b787603a",
+      "name": "Mango de azucar kilo"
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a5cb91614d627b787604d"
+  },
+  "address": "Calle 44",
+  "email": "shopper1@mail.com",
+  "name": "Shopper 1",
+  "phone": "302",
+  "whatsapp": "302",
+  "status": "ON_HOLD",
+  "type": "shopper",
+  "companies": [],
+  "products": null,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6580cf2a69d49378ab66b476"
+  },
+  "address": "Calle 45",
+  "email": "company2@mail.com",
+  "name": "Empresa 2",
+  "phone": "305",
+  "whatsapp": "305",
+  "status": "ON_HOLD",
+  "type": "company",
+  "companies": null,
+  "products": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6580ee7e8adc509ae5801a15"
+  },
+  "address": "Calle 46",
+  "email": "shopper2@mail.com",
+  "name": "Shopper 2",
+  "phone": "306",
+  "whatsapp": "306",
+  "status": "ON_HOLD",
+  "type": "shopper",
+  "companies": null,
+  "products": [],
+  "__v": 0
+}]

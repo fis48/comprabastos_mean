@@ -1,0 +1,92 @@
+[{
+  "_id": {
+    "$oid": "65810f0b6f33eb1f9fc5cdb6"
+  },
+  "shopperId": "657a5cb91614d627b787604d",
+  "shopperName": "Shopper 1",
+  "companyId": "657a5c9f1614d627b787604b",
+  "dueDate": {
+    "$date": "2023-12-21T00:00:00.000Z"
+  },
+  "products": [
+    {
+      "productId": "657a5c001614d627b7876028",
+      "productName": "Tomate verde kilo",
+      "value": 10,
+      "_id": {
+        "$oid": "65810f0b6f33eb1f9fc5cdb7"
+      }
+    },
+    {
+      "productId": "657a5c461614d627b7876031",
+      "productName": "Cebolla junca kilo",
+      "value": 10,
+      "_id": {
+        "$oid": "65810f0b6f33eb1f9fc5cdb8"
+      }
+    },
+    {
+      "productId": "657a5c1d1614d627b787602b",
+      "productName": "Tomate verde canastilla",
+      "value": 10,
+      "_id": {
+        "$oid": "65810f0b6f33eb1f9fc5cdb9"
+      }
+    },
+    {
+      "productId": "657a5c6f1614d627b787603a",
+      "productName": "Mango de azucar kilo",
+      "value": 10,
+      "_id": {
+        "$oid": "65810f0b6f33eb1f9fc5cdba"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65810f5c6f33eb1f9fc5cdc8"
+  },
+  "shopperId": "6580ee7e8adc509ae5801a15",
+  "shopperName": "Shopper 2",
+  "companyId": "657a5c9f1614d627b787604b",
+  "dueDate": {
+    "$date": "2023-12-25T00:00:00.000Z"
+  },
+  "products": [
+    {
+      "productId": "657a5c001614d627b7876028",
+      "productName": "Tomate verde kilo",
+      "value": 12,
+      "_id": {
+        "$oid": "65810f5c6f33eb1f9fc5cdc9"
+      }
+    },
+    {
+      "productId": "657a5c461614d627b7876031",
+      "productName": "Cebolla junca kilo",
+      "value": 12,
+      "_id": {
+        "$oid": "65810f5c6f33eb1f9fc5cdca"
+      }
+    },
+    {
+      "productId": "657a5c1d1614d627b787602b",
+      "productName": "Tomate verde canastilla",
+      "value": 12,
+      "_id": {
+        "$oid": "65810f5c6f33eb1f9fc5cdcb"
+      }
+    },
+    {
+      "productId": "657a5c6f1614d627b787603a",
+      "productName": "Mango de azucar kilo",
+      "value": 12,
+      "_id": {
+        "$oid": "65810f5c6f33eb1f9fc5cdcc"
+      }
+    }
+  ],
+  "__v": 0
+}]

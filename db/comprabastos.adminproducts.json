@@ -1,0 +1,108 @@
+[{
+  "_id": {
+    "$oid": "657a5c001614d627b7876028"
+  },
+  "name": "Tomate verde kilo",
+  "prices": [
+    {
+      "timestamp": {
+        "$numberLong": "1702517760088"
+      },
+      "value": 2000,
+      "_id": {
+        "$oid": "657a5c001614d627b7876029"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a5c1d1614d627b787602b"
+  },
+  "name": "Tomate verde canastilla",
+  "prices": [
+    {
+      "timestamp": {
+        "$numberLong": "1702517789787"
+      },
+      "value": 24000,
+      "_id": {
+        "$oid": "657a5c1d1614d627b787602c"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a5c461614d627b7876031"
+  },
+  "name": "Cebolla junca kilo",
+  "prices": [
+    {
+      "timestamp": {
+        "$numberLong": "1702517830510"
+      },
+      "value": 1200,
+      "_id": {
+        "$oid": "657a5c461614d627b7876032"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a5c531614d627b7876034"
+  },
+  "name": "Cebolla junca bulto",
+  "prices": [
+    {
+      "timestamp": {
+        "$numberLong": "1702517843046"
+      },
+      "value": 20000,
+      "_id": {
+        "$oid": "657a5c531614d627b7876035"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a5c671614d627b7876037"
+  },
+  "name": "Mango de azucar canastilla",
+  "prices": [
+    {
+      "timestamp": {
+        "$numberLong": "1702517863497"
+      },
+      "value": 22000,
+      "_id": {
+        "$oid": "657a5c671614d627b7876038"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657a5c6f1614d627b787603a"
+  },
+  "name": "Mango de azucar kilo",
+  "prices": [
+    {
+      "timestamp": {
+        "$numberLong": "1702517871564"
+      },
+      "value": 7500,
+      "_id": {
+        "$oid": "657a5c6f1614d627b787603b"
+      }
+    }
+  ],
+  "__v": 0
+}]

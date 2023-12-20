@@ -74,7 +74,7 @@ export class QuoteComponent {
         shopperId: this.shopper.id,
         shopperName: this.shopper.name,
         companyId: this.company.id,
-        prices: this.qPrices,
+        products: this.qPrices,
         dueDate: this.dueTimestamp
       }
       this.cbService.updateQuote(quote)

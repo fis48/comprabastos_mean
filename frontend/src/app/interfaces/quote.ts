@@ -5,5 +5,5 @@ export interface IQuote {
     shopperName: string
     companyId: string
     dueDate: number
-    prices: IQuoteItem[]
+    products: IQuoteItem[]
 }

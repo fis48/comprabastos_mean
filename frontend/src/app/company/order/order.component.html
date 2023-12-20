@@ -1,6 +1,44 @@
 <div class="main-container">
     <h1 class="page-title text-2xl">
-        Pedido
+        Ofertas
     </h1>
+
+    <button (click)="toggleDetails()">
+        Detalles
+    </button>
+    
+    <div *ngFor="let quote of quotes" class="quote-container my-5">
+        <h2 class="page-title text-2xl">
+            {{ quote.shopperName }}
+        </h2>
+        <div class="totals flex mb-5">
+            <p class="font-bold text-lg">
+                Total productos: {{ quote.totals.products }}
+            </p>
+            <p class="font-bold text-lg">
+                Valor total: {{ quote.totals.price }}
+            </p>    
+        </div>
+        <div *ngIf="showDetails" class="offer-details">
+            <div class="row details-headers flex justify-between">
+                <p>Producto</p>
+                <p>Precio</p>
+                <p>Cantidad</p>
+                <p>Total</p>
+            </div>
+            <div class="flex flex-col mt-5">
+                <div *ngFor="let item of quote.details" class="row flex justify-between">
+                    <p class="font-bold">{{ item.productName }}</p>
+                    <p>{{ item.price }}</p>
+                    <p>{{ item.quant }}</p>
+                    <p>{{ item.total }}</p>
+                </div>
+            </div>
+            <button class="mt-5">
+                Pedir
+            </button>
+        </div>
+
+    </div>
     
 </div>

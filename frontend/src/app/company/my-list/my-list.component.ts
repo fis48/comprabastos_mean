@@ -15,7 +15,7 @@ export class MyListComponent {
   public adminProducts:IProduct[] = []
   public company: IUser | null = null
   public creatingOrder: boolean = false
-  public orderList: {product: string, value: number}[] = []
+  public orderList: {product: string, quant: number}[] = []
 
   constructor() {
     // admin products
@@ -79,38 +79,13 @@ export class MyListComponent {
     this.creatingOrder = !this.creatingOrder
   }
 
-  // handleOrderList(e: any, product:any) {
-  //   const { checked } = e.target
-  //   if (checked) {
-  //     this.orderList = [ ...this.orderList, product ]
-  //   }
-  //   else {
-  //     this.orderList = this.orderList.filter(item => item.id !== product.id)
-  //   }
-  // }
-
   handleItemQuant(e:any, product:any) {
     const { value } = e.target
     const newItem = {
       product,
-      value
+      quant: value
     }
     this.orderList = [ ...this.orderList, newItem ]
-
-
-
-    // this.orderList.map((item, i) => {
-    //   if (item.id === product.id) {
-    //     let it:any = { ...item }
-    //     it = { ...it, quant: value }
-    //     this.orderList[i] = it
-
-    //     console.log(this.orderList)
-
-    //   }
-
-
-    // })
   }
 
   sendOrder() {
