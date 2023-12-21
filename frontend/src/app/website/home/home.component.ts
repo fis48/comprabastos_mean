@@ -14,6 +14,8 @@ export class HomeComponent {
   constructor() {
     this.cbService.getAdminProducts().subscribe(() => {
       this.adminProducts = this.cbService.adminProducts()
+
+      console.log(this.adminProducts)
     })
   }
 

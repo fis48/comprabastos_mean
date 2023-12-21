@@ -1,6 +1,19 @@
 <div class="table-container">
-  <div *ngFor="let item of items" class="row">
-    <span>{{ item.name }}</span>
-    <span>$ {{ item.avgPrice | number }}</span>
+  <div *ngFor="let item of items" class="row flex-col">
+    <div class="flex justify-between">
+      <span class="font-bold text-md">{{ item.name }}</span>
+      <span>$ {{ item.avgPrice | number }}</span>
+    </div>
+    <div *ngIf="showDates">
+      <div *ngFor="let price of item.prices">
+        <p>{{ price.timestamp | date }}</p>
+        <p>{{ price.value | number }}</p>
+      </div>
+      <button *ngIf="logged && logged.type === 'admin'"
+        (click)="handleSelected(item)"
+      >
+        Actulaizar
+      </button>
+    </div>
   </div>
 </div>

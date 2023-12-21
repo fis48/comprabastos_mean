@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { ComprabastosService } from '../../services/comprabastos.service';
 import { IProduct } from 'src/app/interfaces';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -10,10 +11,11 @@ import { IProduct } from 'src/app/interfaces';
 })
 
 export class HomeComponent {
-  private cbService:ComprabastosService = inject(ComprabastosService)
-  
+  private cbService = inject(ComprabastosService)
+  private router = inject(Router)
+
   adminProducts:IProduct[] = []
-  showForm:boolean = true
+  showForm:boolean = false
 
   constructor() {
     const adminProducts = this.cbService.adminProducts()
@@ -28,5 +30,17 @@ export class HomeComponent {
     else {
       this.adminProducts = adminProducts
     }
+  }
+
+  toggleForm() {
+    this.showForm = !this.showForm
+  }
+
+  handleUpdatingProduct(updProduct:IProduct) {
+    this.cbService.updatingProduct.set(updProduct)
+    this.router.navigate(['/admin/product'])
+
+    console.log(updProduct)
+
   }
 }

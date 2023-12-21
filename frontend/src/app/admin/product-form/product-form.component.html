@@ -1,10 +1,14 @@
-<form class="form-container" [formGroup]="productForm" (ngSubmit)="handleSubmit()">
+<form class="form-container" 
+  [formGroup]="productForm" 
+  (ngSubmit)="handleSubmit()"
+>
   <label for="name">
     <span>Nombre del producto</span>
     <input 
       name="name"
       type="text"
       formControlName="name"
+      class="form-control"
     >
   </label>
   <label for="price">
@@ -13,10 +17,11 @@
       name="price"
       type="number"
       formControlName="price"
+      class="form-control"
     >
   </label>
 
-  <button type="submit">
+  <button type="submit mt-5">
     Guardar
   </button>
 </form>

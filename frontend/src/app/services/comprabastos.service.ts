@@ -14,6 +14,7 @@ export class ComprabastosService {
   public adminProducts = signal<IProduct[]>([])
   public logged = signal<IUser | null>(null)
   public onGoingOrder = signal<any>([])
+  public updatingProduct = signal<IProduct | null>(null)
 
   getAdminProducts() {
     return this.http.get(`${environment.localBackendUri}/admin-products`).pipe(

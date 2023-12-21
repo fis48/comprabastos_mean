@@ -1,20 +1,35 @@
-<p>Admin home</p>
-<button>
-  Nuevo producto
-</button>
+<div class="main-container">
+  <h1 class="page-title text-2xl">
+    Adminstrador
+  </h1>
 
-<div *ngIf="showForm">
-  <product-form></product-form>
-</div>
+  <button (click)="toggleForm()">
+    Nuevo producto
+  </button>
 
-<div>
-  <h2>Productos</h2>
-  <div *ngFor="let product of adminProducts" class="flex justify-around">
-    <p>{{ product.name }}</p>
-    <!-- <div *ngFor="let price of product.prices" class="flex">
-      <p>{{ price.timestamp | date: 'EE dd' }}</p>
-    </div> -->
-    <p>{{ product.avgPrice }}</p>
-    <button>Actualizar</button>
+  <div *ngIf="showForm" class="my-10">
+    <product-form></product-form>
   </div>
+
+  <div class="mt-5">
+    <h2 class="page-title text-lg">
+      Productos
+    </h2>
+
+    <app-items-table
+      [items]="adminProducts"
+      [showDates]="true"
+      (sendSelected)="handleUpdatingProduct($event)"
+    ></app-items-table>
+
+
+    <!-- <div *ngFor="let product of adminProducts" class="flex justify-around">
+      <p>{{ product.name }}</p>
+      <div *ngFor="let price of product.prices" class="flex">
+        <p>{{ price.timestamp | date: 'EE dd' }}</p>
+      </div>
+      <p>{{ product.avgPrice }}</p>
+      <button>Actualizar</button>
+    </div> -->
+  </div>  
 </div>
