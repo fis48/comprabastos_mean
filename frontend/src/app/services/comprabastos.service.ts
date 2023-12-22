@@ -35,9 +35,11 @@ export class ComprabastosService {
       ap = product.prices[0].value
     }
     else {
-      ap = productClone.prices.reduce((a:any, b: any) => { 
-        return (a.value + b.value) / product.prices.length 
-      })
+      let total = 0
+      productClone.prices.forEach((item:any) => {
+        total += item.value
+      });
+      ap = Math.ceil(total / productClone.prices.length)
     }
     productClone.avgPrice = ap
     return productClone
@@ -75,5 +77,12 @@ export class ComprabastosService {
     return this.http.get(`${environment.localBackendUri}/quotes/${companyId}`)
   }
   
+  updatePrices(productId: string, prices: any) {
+    const updData = {
+      productId,
+      prices
+    }
+    return this.http.patch(`${environment.localBackendUri}/product-prices`, updData)
+  }
   
 }

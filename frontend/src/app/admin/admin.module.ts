@@ -8,12 +8,14 @@ import { ProductFormComponent } from './product-form/product-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { ProductComponent } from './product/product.component';
+import { PricesComponent } from './prices/prices.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     ProductFormComponent,
-    ProductComponent
+    ProductComponent,
+    PricesComponent
   ],
   imports: [
     CommonModule,

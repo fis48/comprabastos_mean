@@ -1,0 +1,39 @@
+<div class="main-container">
+  <h1 class="page-title text-2xl">
+    Precios
+  </h1>
+
+  <div *ngFor="let product of pricesList" class="flex flex-col">
+    <div class="flex justify-between">
+      <p>{{ product.name }}</p>
+      <p>Precio promedio: {{ product.avgPrice | number }}</p>
+    </div>
+    <div *ngFor="let price of product.prices" class="flex justify-between">
+      <p>{{ price.timestamp | date: 'EE dd' }}</p>
+      <p>{{ price.value | number }}</p>
+    </div>
+
+    <label for="new-price"
+      *ngIf="updatingProduct && updatingProduct.id === product.id; 
+      else newPrice"
+    >
+      <span>Nuevo precio</span>
+      <input 
+        type="number"
+        name="new-price"
+        class="form-control"
+        (change)="hanldeNewPrice($event)"
+      >
+      <button (click)="cancelPriceUpdate()">
+        Cancelar
+      </button>
+    </label>
+    <ng-template #newPrice>
+      <button 
+        (click)="setNewPrice(product)"
+      >
+        Cambiar precio
+      </button>
+    </ng-template>
+  </div>
+</div>

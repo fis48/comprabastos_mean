@@ -3,9 +3,15 @@
     Adminstrador
   </h1>
 
-  <button (click)="toggleForm()">
-    Nuevo producto
-  </button>
+  <nav>
+
+    <button (click)="toggleForm()">
+      Nuevo producto
+    </button>
+    <button routerLink="/admin/prices">
+      Precios
+    </button>
+  </nav>
 
   <div *ngIf="showForm" class="my-10">
     <product-form></product-form>
@@ -21,15 +27,6 @@
       [showDates]="true"
       (sendSelected)="handleUpdatingProduct($event)"
     ></app-items-table>
-
-
-    <!-- <div *ngFor="let product of adminProducts" class="flex justify-around">
-      <p>{{ product.name }}</p>
-      <div *ngFor="let price of product.prices" class="flex">
-        <p>{{ price.timestamp | date: 'EE dd' }}</p>
-      </div>
-      <p>{{ product.avgPrice }}</p>
-      <button>Actualizar</button>
-    </div> -->
+    
   </div>  
 </div>
