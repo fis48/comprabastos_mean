@@ -2,10 +2,19 @@
     <h1 class="page-title text-2xl">
         Ofertas
     </h1>
-
-    <button (click)="toggleDetails()">
-        Detalles
-    </button>
+    <nav>
+        <button routerLink="/company/list">
+            Volver
+        </button>
+        <button *ngIf="showDetails; else moreBtn" (click)="toggleDetails()">
+            Ver menos
+        </button>
+        <ng-template #moreBtn>
+            <button (click)="toggleDetails()">
+                Ver mas
+            </button>
+        </ng-template>
+    </nav>
     
     <div *ngFor="let quote of quotes" class="quote-container my-5">
         <h2 class="page-title text-2xl">
@@ -34,7 +43,7 @@
                     <p>{{ item.total }}</p>
                 </div>
             </div>
-            <button class="mt-5">
+            <button (click)="handleOrder(quote)" class="mt-5">
                 Pedir
             </button>
         </div>

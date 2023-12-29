@@ -1,0 +1,78 @@
+<div class="main-container">
+    <h1 class="page-title text-2xl">
+        Pedido creado
+    </h1>
+    <div *ngIf="order" class="info-container flex flex-col">
+        <div class="row flex flex-col">
+            <p>
+                <span class="font-bold">Fecha de creacion:</span> 
+                {{ order.createdAt | date }}
+            </p>
+            <p>
+                <span class="font-bold">Condiciones de entrega:</span> 
+                Pending info from company register.
+            </p>    
+        </div>
+        <div class="order-card">
+            <h2 class="page-title text-xl">
+                Informacion del vendedor
+            </h2>
+            <h3 class="text-md">
+                {{ order.shopperName }}
+            </h3>
+            <p>
+                <span>Telefono:</span> 
+                {{ order.shopperPhone }}
+            </p>
+            <p>
+                <span>Email:</span> 
+                {{ order.shopperEmail }}
+            </p>
+            <p>
+                <span>Direccion:</span> 
+                {{ order.shopperAddress }}
+            </p>
+        </div>
+        <div *ngIf="order" class="order-card">
+            <h2 class="page-title text-xl">
+                Informacion del comprador
+            </h2>
+            <h3 class="text-md">
+                {{ order.companyName }}
+            </h3>
+            <p>
+                <span>Telefono:</span> 
+                {{ order.companyPhone }}
+            </p>
+            <p>
+                <span>Email:</span> 
+                {{ order.companyEmail }}
+            </p>
+            <p>
+                <span>Direccion:</span> 
+                {{ order.companyAddress }}
+            </p>
+        </div>    
+    </div>
+    <div *ngIf="order" class="flex flex-col mt-5">
+        <h2 class="page-title text-xl">
+            Productos
+        </h2>
+        <div class="row flex my-2">
+            <p class="font-bold">Nombre</p>
+            <p class="text-center font-bold text-sm">Cantidad</p>
+            <p class="text-center font-bold text-sm">Precio</p>
+            <p class="text-right font-bold text-sm">Total</p>
+        </div>
+        <div *ngFor="let product of order.products" class="row flex py-2">
+            <p class="text-xs">{{ product.productName }}</p>
+            <p class="text-center text-xs">{{ product.quant }}</p>
+            <p class="text-center text-xs">{{ product.price }}</p>
+            <p class="text-right text-xs">{{ product.total }}</p>
+        </div>
+        <h2 class="page-title text-2xl mt-5">
+            <span>Valor total:</span>
+            {{ order.total }}
+        </h2>
+    </div>
+</div>

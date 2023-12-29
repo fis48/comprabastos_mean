@@ -22,17 +22,14 @@
       <p class="w-3/12">{{ product.name }}</p>
       <div class="w-4/12" *ngIf="creatingOrder" 
         class="order-info flex content-center justify-around">
-        <!-- <input 
-          type="checkbox" 
-          (change)="handleOrderList($event, product)"
-          class="mr-4"
-        > -->
         <input 
+          [id]="product.id"
+          #productId
           type="number" 
           name="quant" 
-          (change)="handleItemQuant($event, product)"
           class="form-control"
           value="0"
+          (change)="handleItemQuant($event, product)"
         >
       </div>
       <button *ngIf="!creatingOrder" (click)="removeFromList(product)">

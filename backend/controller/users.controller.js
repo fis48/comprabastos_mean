@@ -1,7 +1,7 @@
 import UserModel from "../models/user.js"
 
 export const login = (req, res, next) => {
-  
+
   console.log('TODO: Login', req.body)
 
   const { email } = req.body
@@ -34,22 +34,39 @@ export const register = (req, res, next) => {
     case 'company':
       newUser.products = []
       newUser.companies = null
-    break
+      break
     case 'shopper':
       newUser.companies = []
       newUser.products = null
-    break
+      break
   }
   newUser.save()
     .then((result) => {
-      return res.json(result) 
+      return res.json(result)
     }).catch((err) => {
       next(err)
     });
 }
 
 export const logout = (req, res, next) => {
-  
+
   return res.json({ ok: true });
 
+}
+
+export const getUSer = async (req, res, next) => {
+  const { userId } = req.params
+  const shopper = await UserModel.findById(userId)
+
+
+  console.log('shopper::', shopper)
+
+  // UserModel.findById(userId)
+  //   .then(result => {
+  //     console.log('shopper:', result)
+
+
+  //     return res.json(result)
+  //   })
+  //   .catch(err => next(err))
 }

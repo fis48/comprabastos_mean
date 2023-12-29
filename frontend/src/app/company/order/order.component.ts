@@ -1,4 +1,5 @@
 import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 import { IQuote } from 'src/app/interfaces/quote';
 import { IQuoteCard } from 'src/app/interfaces/quoteCard';
 import { IQuoteItem } from 'src/app/interfaces/quoteItem';
@@ -11,16 +12,16 @@ import { ComprabastosService } from 'src/app/services/comprabastos.service';
 })
 export class OrderComponent {
   private cbService = inject(ComprabastosService)
+  private router = inject(Router)
 
   public rawQuotes:IQuote[] = []
   public company = this.cbService.logged()
   public order = this.cbService.onGoingOrder()
   public quotes:any[] = [] 
-  public showDetails:boolean = false
+  public showDetails:boolean = true
 
   constructor() {
     this.getQuotes()
-
   }
 
   toggleDetails() {
@@ -33,6 +34,9 @@ export class OrderComponent {
         this.rawQuotes = resp
         this.handleQuotes(this.rawQuotes)
       })
+    }
+    else {
+      this.router.navigate(['/company/list'])
     }
   }
 
@@ -78,5 +82,17 @@ export class OrderComponent {
     }
     return totals
   }
+
+  handleOrder(selectedOffer: any) {
+    if (this.company) {
+      this.cbService.createOrder(this.company, selectedOffer)
+      .subscribe(created => {
+        this.cbService.createdOrder.set(created)
+        this.router.navigate(['/company/created-order'])
+      })      
+    }
+
+  }
+
 
 }

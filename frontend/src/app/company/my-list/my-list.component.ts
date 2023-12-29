@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, ElementRef, ViewChild, inject } from '@angular/core';
 import { ComprabastosService } from '../../services/comprabastos.service';
 import { IUserItems, IProduct, IUser } from 'src/app/interfaces';
 import { Router } from '@angular/router';
@@ -11,17 +11,22 @@ import { Router } from '@angular/router';
 export class MyListComponent {
   private cbService = inject(ComprabastosService)
   private router = inject(Router)
+  private elemRef = inject(ElementRef)
   
   public adminProducts:IProduct[] = []
   public company: IUser | null = null
   public creatingOrder: boolean = false
   public orderList: {product: string, quant: number}[] = []
+  public onGoing:any = this.cbService.onGoingOrder()
 
   constructor() {
+    if (this.onGoing.length > 0) {
+      this.creatingOrder = true
+    }
+
     // admin products
     const adminProducts = this.cbService.adminProducts()
     if (adminProducts.length <= 0) {
-      console.log('Reload products fired')
       this.cbService.getAdminProducts().subscribe((resp) => {
         this.adminProducts = resp
         this.cbService.adminProducts.set(resp)
@@ -43,6 +48,17 @@ export class MyListComponent {
     else {
       this.company = logged
     }
+  }
+
+  handleInputValues() {
+    this.onGoing.forEach((item:any) => {
+      const inputFound = document.getElementById(item.product.id)
+      inputFound?.setAttribute('value', item.quant)
+    });
+  }
+
+  ngAfterViewInit() {
+    this.handleInputValues()
   }
 
   addToList(selected:IProduct) {
@@ -85,10 +101,30 @@ export class MyListComponent {
       product,
       quant: value
     }
-    this.orderList = [ ...this.orderList, newItem ]
+    if (this.onGoing.length > 0) {
+      this.orderList = this.onGoing
+    }
+    
+    if (this.orderList.length === 0) {
+      this.orderList = [ ...this.orderList, newItem ]
+    }
+    else {
+      const foundIndex = this.orderList.findIndex((item:any) => item.product.id === product.id)
+      if (foundIndex === -1) {
+        this.orderList = [ ...this.orderList, newItem ]        
+      }
+      else {
+        let updItem = this.orderList[foundIndex]
+        updItem.quant = value
+        this.orderList[foundIndex] = updItem            
+      }
+    }
   }
 
   sendOrder() {
+    if (this.orderList.length < this.onGoing.length) {
+      this.orderList = this.onGoing
+    }
     this.cbService.onGoingOrder.set(this.orderList)
     this.router.navigate(['/company/order'])
   }

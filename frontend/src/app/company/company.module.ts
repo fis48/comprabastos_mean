@@ -7,13 +7,15 @@ import { SearchComponent } from '../shared/search/search.component';
 import { SharedModule } from '../shared/shared.module';
 import { MyListComponent } from './my-list/my-list.component';
 import { OrderComponent } from './order/order.component';
+import { CreatedOrderComponent } from './created-order/created-order.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     MyListComponent,
-    OrderComponent
+    OrderComponent,
+    CreatedOrderComponent
   ],
   imports: [
     CommonModule,

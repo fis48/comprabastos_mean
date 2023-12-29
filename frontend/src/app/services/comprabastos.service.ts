@@ -14,6 +14,7 @@ export class ComprabastosService {
   public adminProducts = signal<IProduct[]>([])
   public logged = signal<IUser | null>(null)
   public onGoingOrder = signal<any>([])
+  public createdOrder = signal<any | null>(null)
   public updatingProduct = signal<IProduct | null>(null)
 
   getAdminProducts() {
@@ -84,5 +85,12 @@ export class ComprabastosService {
     }
     return this.http.patch(`${environment.localBackendUri}/product-prices`, updData)
   }
-  
+
+  createOrder(company:IUser, offer:any) {
+    return this.http.post(`${environment.localBackendUri}/order`, {
+      company,
+      offer
+    })
+  }
+
 }
