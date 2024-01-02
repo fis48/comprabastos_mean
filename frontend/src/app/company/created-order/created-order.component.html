@@ -2,6 +2,11 @@
     <h1 class="page-title text-2xl">
         Pedido creado
     </h1>
+    <nav>
+        <button routerLink="/company">
+            Volver
+        </button>    
+    </nav>
     <div *ngIf="order" class="info-container flex flex-col">
         <div class="row flex flex-col">
             <p>
@@ -67,12 +72,12 @@
         <div *ngFor="let product of order.products" class="row flex py-2">
             <p class="text-xs">{{ product.productName }}</p>
             <p class="text-center text-xs">{{ product.quant }}</p>
-            <p class="text-center text-xs">{{ product.price }}</p>
-            <p class="text-right text-xs">{{ product.total }}</p>
+            <p class="text-center text-xs">{{ product.price | number }}</p>
+            <p class="text-right text-xs">{{ product.total | number }}</p>
         </div>
         <h2 class="page-title text-2xl mt-5">
             <span>Valor total:</span>
-            {{ order.total }}
+            {{ order.total | number }}
         </h2>
     </div>
 </div>

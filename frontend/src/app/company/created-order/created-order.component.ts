@@ -20,6 +20,9 @@ export class CreatedOrderComponent {
       this.router.navigate(['/company/list'])
     }
 
+    this.cbService.onGoingOrder.set(null)
+    // this.cbService.createdOrder.set(null)
+
     console.log('created order:', this.order)
 
   }

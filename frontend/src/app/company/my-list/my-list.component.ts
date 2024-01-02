@@ -20,7 +20,7 @@ export class MyListComponent {
   public onGoing:any = this.cbService.onGoingOrder()
 
   constructor() {
-    if (this.onGoing.length > 0) {
+    if (this.onGoing && this.onGoing.length > 0) {
       this.creatingOrder = true
     }
 
@@ -51,10 +51,12 @@ export class MyListComponent {
   }
 
   handleInputValues() {
-    this.onGoing.forEach((item:any) => {
-      const inputFound = document.getElementById(item.product.id)
-      inputFound?.setAttribute('value', item.quant)
-    });
+    if (this.onGoing) {
+      this.onGoing.forEach((item:any) => {
+        const inputFound = document.getElementById(item.product.id)
+        inputFound?.setAttribute('value', item.quant)
+      });        
+    }
   }
 
   ngAfterViewInit() {
@@ -101,6 +103,11 @@ export class MyListComponent {
       product,
       quant: value
     }
+
+    if (!this.onGoing) {
+      this.onGoing = []
+    }
+
     if (this.onGoing.length > 0) {
       this.orderList = this.onGoing
     }
@@ -126,6 +133,8 @@ export class MyListComponent {
       this.orderList = this.onGoing
     }
     this.cbService.onGoingOrder.set(this.orderList)
+    this.creatingOrder = false
+    this.orderList = []
     this.router.navigate(['/company/order'])
   }
 }

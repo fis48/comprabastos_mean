@@ -20,6 +20,8 @@ export class QuoteComponent {
   public qPrices:IQuoteItem[] = []
   public validData:boolean = false
   public dueTimestamp:number | null = null
+  public actualQuote:any = null
+  public actualDueDate: string | null = null
 
   constructor() {
     const logged = this.cbService.logged()
@@ -28,16 +30,34 @@ export class QuoteComponent {
         .subscribe(resp => {
           this.company = resp as IUser
           this.shopper = this.cbService.logged()
+          let loggedId;
           if (!this.shopper) {
-            const loggedId = localStorage.getItem('token')
+            loggedId = localStorage.getItem('token')
             if (loggedId) {
               this.cbService.getLogged(loggedId).subscribe(result => {
                 this.shopper = result
               })              
             }
           }
+          this.existingQuote()
         })
     })
+  }
+
+  existingQuote() {
+    if (this.company && this.company.id && this.shopper && this.shopper.id) {
+      this.cbService.getQuote(this.company?.id, this.shopper.id)
+      .subscribe((resp:any) => {
+        if (resp) {
+          this.actualQuote = resp
+          const date = resp.dueDate.split('T')
+          this.actualDueDate = date[0]
+          this.qPrices = resp.products
+          this.dueTimestamp = new Date(this.actualDueDate!).getTime()
+        }
+        this.handleValidData()
+      })        
+    }
   }
 
   handleQuote(e:any, product:any) {
@@ -47,8 +67,18 @@ export class QuoteComponent {
       productName: product.name,
       value: Number(value)
     }
-    this.qPrices = [ ...this.qPrices, item ]
+    const foundIndex = this.priceExists(product)
+    if (foundIndex === -1) {
+      this.qPrices = [ ...this.qPrices, item ]    
+    }
+    else {
+      item.value = Number(value)
+      this.qPrices[foundIndex] = item
+    }
+    this.handleValidData()
+  }
 
+  handleValidData() {
     if (this.company && this.company.products) {
       const productsLen = this.company.products.length
       if (this.qPrices.length === productsLen) {
@@ -58,6 +88,12 @@ export class QuoteComponent {
         this.validData = false
       }
     }
+
+  }
+
+  priceExists(product:any) {
+    const foundIndex = this.qPrices.findIndex((item:any) => item.productId === product.id)
+    return foundIndex
   }
 
   handleDate(e:any) {
@@ -67,7 +103,6 @@ export class QuoteComponent {
   }
 
   saveQuote() {
-
     if (this.shopper && this.shopper.id && this.company && this.company.id
         && this.dueTimestamp) {
       const quote:IQuote = {

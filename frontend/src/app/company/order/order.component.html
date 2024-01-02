@@ -25,7 +25,7 @@
                 Total productos: {{ quote.totals.products }}
             </p>
             <p class="font-bold text-lg">
-                Valor total: {{ quote.totals.price }}
+                Valor total: {{ quote.totals.price | number }}
             </p>    
         </div>
         <div *ngIf="showDetails" class="offer-details">
@@ -40,7 +40,7 @@
                     <p class="font-bold">{{ item.productName }}</p>
                     <p>{{ item.price }}</p>
                     <p>{{ item.quant }}</p>
-                    <p>{{ item.total }}</p>
+                    <p>{{ item.total | number }}</p>
                 </div>
             </div>
             <button (click)="handleOrder(quote)" class="mt-5">

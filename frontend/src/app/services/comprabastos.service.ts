@@ -93,4 +93,8 @@ export class ComprabastosService {
     })
   }
 
+  getQuote(companyId: string, shopperId: string) {
+    return this.http.get(`${environment.localBackendUri}/quote/${companyId}/${shopperId}`)
+  }
+
 }
