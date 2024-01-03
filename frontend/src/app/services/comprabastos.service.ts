@@ -97,4 +97,8 @@ export class ComprabastosService {
     return this.http.get(`${environment.localBackendUri}/quote/${companyId}/${shopperId}`)
   }
 
+  createUser(createData:IUser) {
+    return this.http.post(`${environment.localBackendUri}/register`, createData)
+  }
+
 }

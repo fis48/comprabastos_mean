@@ -32,6 +32,12 @@ const userShema = new mongoose.Schema({
   type: {
     type: String
   },
+  deliveryTerms: {
+    type: String
+  },
+  paymentTerms: {
+    type: String
+  },
   companies: {
     type: Array,
     default: []

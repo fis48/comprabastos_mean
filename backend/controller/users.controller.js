@@ -57,16 +57,4 @@ export const logout = (req, res, next) => {
 export const getUSer = async (req, res, next) => {
   const { userId } = req.params
   const shopper = await UserModel.findById(userId)
-
-
-  console.log('shopper::', shopper)
-
-  // UserModel.findById(userId)
-  //   .then(result => {
-  //     console.log('shopper:', result)
-
-
-  //     return res.json(result)
-  //   })
-  //   .catch(err => next(err))
 }
