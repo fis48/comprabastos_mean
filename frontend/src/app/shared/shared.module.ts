@@ -4,6 +4,7 @@ import { SearchComponent } from './search/search.component';
 import { TopComponent } from './top/top.component';
 import { ItemsTableComponent } from './items-table/items-table.component';
 import { FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
 
 
 
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    MatIconModule
   ],
   exports: [
     SearchComponent,

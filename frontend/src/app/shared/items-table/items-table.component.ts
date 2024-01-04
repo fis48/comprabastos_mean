@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
 import { IProduct } from 'src/app/interfaces';
 import { ComprabastosService } from 'src/app/services/comprabastos.service';
+// import { } from "@angular/material/icon/";
 
 @Component({
   selector: 'app-items-table',

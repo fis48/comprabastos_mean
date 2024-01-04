@@ -58,15 +58,20 @@ export class OrderComponent {
   getShopperDetail(shopperPrices:any[]) {
     let details:any[] = []
     this.order.forEach((item:any) => {
+
+      console.log('shopperPrices', shopperPrices)
+
       const shProduct = shopperPrices.find((x:any) => x.productId === item.product.id)
-      let detail = {
-        productId: shProduct.productId,
-        productName: shProduct.productName,
-        price: shProduct.value,
-        quant: Number(item.quant),
-        total: shProduct.value * item.quant
+      if (shProduct) {
+        let detail = {
+          productId: shProduct.productId,
+          productName: shProduct.productName,
+          price: shProduct.value,
+          quant: Number(item.quant),
+          total: shProduct.value * item.quant
+        }
+        details = [ ...details, detail ]          
       }
-      details = [ ...details, detail ]
     });
     return details
   }

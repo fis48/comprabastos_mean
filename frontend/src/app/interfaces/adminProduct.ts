@@ -6,4 +6,5 @@ export interface IProduct {
     value: number
   }]
   avgPrice?: number
+  status?: string
 }

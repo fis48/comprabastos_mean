@@ -1,21 +1,23 @@
+@import ./../../../variables
+
 .search-container
+    @apply py-5 border-b-4
     span
         display: block
         @apply mb-1
-    @apply py-5 rounded
 
 .found-row
     @apply flex justify-between
     button
-        @apply text-xs py-1
+        @apply text-xs py-1 shadow-none
     p
         @apply text-xs
         line-height: 4
     &:hover
-        background-color: #eee
-        @apply pl-5 rounded
+        @apply font-bold rounded
         button
-            @apply shadow-none
+            color: $secondary
+            background-color: #eee
 
 
 

@@ -4,17 +4,34 @@
 
   <website-main-nav></website-main-nav>
 
-  <div class="flex justify-around my-10">
-    <h2 routerLink="/register" class="text-xl page-title">
-      Registro de aliados
-    </h2>
-    <h2 class="text-xl page-title">
-      Nuestra gente
-    </h2>
+  <div class="flex my-10 justify-between">
+    <div class="card home">
+      <h2 routerLink="/register">
+        Registro de aliados
+      </h2>
+      <p class="py-5">
+        Regístrese en <span>Comprabastos</span> y tenga a la acceso 
+        a los mejores proveedores y compradores de la ciudad.<br>
+        Am et orci enim. Aliquam erat volutpat. Maecenas vel mi in 
+        ante tincidunt iaculis. Vestibulum sed auctor mi, in faucibus 
+        nisi.
+      </p>
+    </div>
+    <div class="card home">
+      <h2>
+        Nuestra gente
+      </h2>
+      <p class="py-5">
+        Nuestros aliados son garantía de buen servicio y calidad.
+        Am et orci enim. Aliquam erat volutpat. <br>
+        Maecenas vel mi in ante tincidunt iaculis. Vestibulum sed 
+        auctor mi, in faucibus nisi.
+      </p>
+    </div>
   </div>
 
   <h2 class="page-title text-xl">
-    Productos
+    Nuestros productos
   </h2>
   <app-items-table
     [items]="adminProducts"

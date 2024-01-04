@@ -1,7 +1,16 @@
-<nav class="flex justify-between w-11/12 m-auto py-4 px-10 rounded">
-  <button class="regular">Whatsapp</button>
-  <button class="regular">Información de contacto</button>
-  <button class="regular" routerLink="/login">
+<nav class="flex w-11/12 py-4">
+  <button *ngIf="!logged; else companyBtn" routerLink="/login">
     Ingresar
-  </button>  
+  </button>
+  <ng-template #companyBtn>
+    <button *ngIf="logged" [routerLink]="['/', logged.type]" >
+      Mi comprabastos
+    </button>
+  </ng-template>
+
+  <button>Whatsapp</button>
+  <button>Información de contacto</button>
+  <button *ngIf="logged" (click)="handleLogout()">
+    Cerrar sesión
+  </button>
 </nav>

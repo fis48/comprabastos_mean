@@ -8,6 +8,7 @@ import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { MainNavComponent } from './main-nav/main-nav.component';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { MainNavComponent } from './main-nav/main-nav.component';
     CommonModule,
     WebsiteRoutingModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconModule
   ]
 })
 export class WebsiteModule { }

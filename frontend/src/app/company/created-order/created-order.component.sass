@@ -2,14 +2,16 @@
 @import ./../../../styles
 
 .order-card
-    @apply mt-5 rounded py-2 px-4
-    background-color: $lightBg
+    @apply mt-5 rounded py-5 px-10
     h2
         color: $primary
 
+.products
+    @apply bg-white rounded px-8 py-2
+
 .row
-    @apply justify-between
-    &:hover
-        @apply font-bold text-sm
+    @apply justify-evenly
     p
         width: 25%
+    &:hover
+        @apply font-bold text-sm

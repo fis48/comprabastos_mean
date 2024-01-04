@@ -1,19 +1,40 @@
 <div class="table-container">
-  <div *ngFor="let item of items" class="row flex-col">
-    <div class="flex justify-between">
-      <span class="font-bold text-md">{{ item.name }}</span>
-      <span>$ {{ item.avgPrice | number }}</span>
+  <div *ngFor="let item of items" class="row">
+    <div class="flex flex-col justify-between w-1/3">
+      <span class="font-bold">{{ item.name }}</span>
+      <span class="font-bold">
+        $ {{ item.avgPrice | number }}
+      </span>
     </div>
-    <div *ngIf="showDates">
-      <div *ngFor="let price of item.prices">
-        <p>{{ price.timestamp | date }}</p>
-        <p>{{ price.value | number }}</p>
-      </div>
-      <button *ngIf="logged && logged.type === 'admin'"
-        (click)="handleSelected(item)"
-      >
-        Actulaizar
-      </button>
+    <div>
+      <span>
+        <mat-icon *ngIf="item.status === 'down'; else arrowUp"
+          class="status-icon down" 
+        >
+          forward
+        </mat-icon>
+        <ng-template #arrowUp>
+          <mat-icon *ngIf="item.status === 'up'; else arrowSame" class="status-icon up">
+            forward
+          </mat-icon>
+        </ng-template>
+        <ng-template #arrowSame>
+          <mat-icon class="status-icon same">forward</mat-icon>
+        </ng-template>
+      </span>
     </div>
+    <div *ngFor="let price of item.prices" class="date-price">
+      <p class="text-xs">
+        {{ price.timestamp | date }}
+      </p>
+      <p class="font-bold">
+        {{ price.value | number }}
+      </p>
+    </div>
+    <button *ngIf="logged && logged.type === 'admin'"
+      (click)="handleSelected(item)"
+    >
+      Actualizar
+    </button>
   </div>
 </div>

@@ -10,16 +10,18 @@ import { IUser } from 'src/app/interfaces';
 export class HomeComponent {
   private cbService = inject(ComprabastosService)
   public companies: IUser[] = []
+  public logged:any = null 
 
   constructor() {
     this.cbService.getCompanies().subscribe((resp:any) => {
       this.companies = resp
     })
-    let logged = this.cbService.logged()
+    this.logged = this.cbService.logged()
     const loggedId = localStorage.getItem('token')
-    if (!logged && loggedId) {
+    if (!this.logged && loggedId) {
       this.cbService.getLogged(loggedId).subscribe((resp:any) => {
         this.cbService.logged.set(resp)
+        this.logged = resp
       })
     }
   }

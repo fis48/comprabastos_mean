@@ -2,14 +2,14 @@
   <h1 class="page-title text-2xl">Mi lista</h1>
   <h2 class="mb-5">{{ company.name }}</h2>
 
-  <div class="flex">
+  <nav class="flex">
     <button routerLink="/company">
       Volver
     </button>
     <button (click)="toggleCreatingOrder()">
       Crear pedido
     </button>
-  </div>
+  </nav>
 
   <app-search class="my-5"
     [adminProducts]="adminProducts"
@@ -37,7 +37,7 @@
       </button>
     </div> 
     <button *ngIf="creatingOrder" 
-      class="my-5"
+      class="my-5 w-1/4"
       (click)="sendOrder()"
     >
       Enviar pedido

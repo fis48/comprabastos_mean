@@ -32,6 +32,7 @@ export class ComprabastosService {
   handleProduct(product:IProduct) {
     let ap = 0
     const productClone:any = { ...product }
+    productClone.prices.sort((a:any, b:any) => a.timestamp + b.timestamp )
     if (productClone.prices.length === 1) {
       ap = product.prices[0].value
     }
@@ -43,6 +44,17 @@ export class ComprabastosService {
       ap = Math.ceil(total / productClone.prices.length)
     }
     productClone.avgPrice = ap
+    
+    let status = 'same';
+    if (productClone.prices[0] && productClone.prices[1]) {
+      if (productClone.prices[0].value < productClone.prices[1].value) {
+        status = 'down'
+      }
+      else if (productClone.prices[0].value > productClone.prices[1].value) {
+        status = 'up'
+      }        
+    }
+    productClone.status = status
     return productClone
   }
 

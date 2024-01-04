@@ -2,16 +2,20 @@
 @tailwind components
 @tailwind utilities
 
-$primary: #81A737
-$lightBg: rgba(143, 204, 122, 0.15)
+@import ./variables
 
 body
-  background-color: #F9FAFB
+  background-color: $bgColor
   @apply text-sm
+  color: $darkText
 
 button
   color: $primary
-  @apply px-10 py-2 shadow-md rounded-md text-xs font-bold 
+  @apply px-10 py-2 shadow-md rounded-md text-xs font-bold
+
+nav
+  button
+    @apply mr-2
 
 label span
   display: block
@@ -20,25 +24,30 @@ label span
 .form-control
   @apply w-full py-2 px-4 rounded shadow
 
-.regular
-    color: #81A737
-    font-weight: bold
-
 .main-container
-  @apply p-10 flex flex-col
+  @apply py-10 px-20 flex flex-col
+
+.card
+  @apply rounded p-10
+  &.home
+    @apply w-1/2 pl-0 pr-20
+    h2
+      @apply border-b-2 pb-5
+      font-size: 36px
+      letter-spacing: -3px
+      border-color: $primary
 
 .table-container
   display: flex
   flex-direction: column
   margin: 0 auto
-  @apply mt-5 px-10 py-3 shadow-md bg-white rounded-lg w-full
+  @apply mt-5 px-12 py-5 pb-12 rounded-lg w-full bg-white shadow-lg
   .row
-    @apply flex justify-between border-b text-xs last:border-0 py-4 rounded
+    @apply flex justify-between border-b text-xs py-5
+    border-color: $lightBg
     &:hover 
-      background-color: #eee
-      @apply px-5 font-bold
-    p
-      line-height: 40px
+      @apply font-bold
+      border-color: $primary
     button
       @apply shadow-none
       margin-bottom: 0
@@ -48,10 +57,21 @@ label span
   @apply font-bold
   
 .form-container
-  @apply w-6/12 m-auto
+  @apply w-6/12 mt-10
   form
-    @apply py-5 px-8 rounded flex flex-col
+    @apply py-5 rounded flex flex-col
+    input, select
+      @apply mb-3
 
-
+.status-icon
+  font-size: 18px
+  &.down
+    rotate: 90deg
+    color: $danger
+  &.up
+    rotate: -90deg
+    color: $primary
+  &.same
+    color: $neutral
 
 

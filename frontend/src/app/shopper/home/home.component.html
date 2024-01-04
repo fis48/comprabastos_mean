@@ -1,10 +1,20 @@
 
-<div class="companies-container">
-  <div *ngFor="let company of companies" class="flex">
+<div class="main-container">
+  <div *ngIf="logged" class="mb-10">
+    <h1 class="page-title text-2xl">
+      Empresas
+    </h1>
+    <h2 class="font-bold">
+      {{ logged.name }}
+    </h2>  
+  </div>
+  <div *ngFor="let company of companies" class="flex align-center justify-between">
     <p>
       {{ company.name }}
     </p>
-    <button [routerLink]="['/shopper/quote', company.id]">
+    <button>
+      Entrega y formas de pago
+    </button>    <button [routerLink]="['/shopper/quote', company.id]">
       Cotizar a esta empresa
     </button>
   </div>

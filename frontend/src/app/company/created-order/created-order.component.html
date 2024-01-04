@@ -8,12 +8,12 @@
         </button>    
     </nav>
     <div *ngIf="order" class="info-container flex flex-col">
-        <div class="row flex flex-col">
-            <p>
+        <div class="flex flex-col bg-white rounded py-5 px-10 mt-5">
+            <p class="flex justify-between">
                 <span class="font-bold">Fecha de creacion:</span> 
-                {{ order.createdAt | date }}
+                <span>{{ order.createdAt | date }}</span>
             </p>
-            <p>
+            <p class="flex justify-between">
                 <span class="font-bold">Condiciones de entrega:</span> 
                 Pending info from company register.
             </p>    
@@ -22,19 +22,19 @@
             <h2 class="page-title text-xl">
                 Informacion del vendedor
             </h2>
-            <h3 class="text-md">
+            <h3 class="text-md font-bold">
                 {{ order.shopperName }}
             </h3>
             <p>
-                <span>Telefono:</span> 
+                <span class="font-bold">Telefono:</span> 
                 {{ order.shopperPhone }}
             </p>
             <p>
-                <span>Email:</span> 
+                <span class="font-bold">Email:</span> 
                 {{ order.shopperEmail }}
             </p>
             <p>
-                <span>Direccion:</span> 
+                <span class="font-bold">Direccion:</span> 
                 {{ order.shopperAddress }}
             </p>
         </div>
@@ -42,38 +42,40 @@
             <h2 class="page-title text-xl">
                 Informacion del comprador
             </h2>
-            <h3 class="text-md">
+            <h3 class="text-md font-bold">
                 {{ order.companyName }}
             </h3>
             <p>
-                <span>Telefono:</span> 
+                <span class="font-bold">Telefono:</span> 
                 {{ order.companyPhone }}
             </p>
             <p>
-                <span>Email:</span> 
+                <span class="font-bold">Email:</span> 
                 {{ order.companyEmail }}
             </p>
             <p>
-                <span>Direccion:</span> 
+                <span class="font-bold">Direccion:</span> 
                 {{ order.companyAddress }}
             </p>
         </div>    
     </div>
-    <div *ngIf="order" class="flex flex-col mt-5">
+    <div *ngIf="order" class="flex flex-col mt-10">
         <h2 class="page-title text-xl">
             Productos
         </h2>
-        <div class="row flex my-2">
-            <p class="font-bold">Nombre</p>
-            <p class="text-center font-bold text-sm">Cantidad</p>
-            <p class="text-center font-bold text-sm">Precio</p>
-            <p class="text-right font-bold text-sm">Total</p>
-        </div>
-        <div *ngFor="let product of order.products" class="row flex py-2">
-            <p class="text-xs">{{ product.productName }}</p>
-            <p class="text-center text-xs">{{ product.quant }}</p>
-            <p class="text-center text-xs">{{ product.price | number }}</p>
-            <p class="text-right text-xs">{{ product.total | number }}</p>
+        <div class="products">
+            <div class="row flex justify-between my-2">
+                <p class="font-bold">Nombre</p>
+                <p class="text-center font-bold text-sm">Cantidad</p>
+                <p class="text-center font-bold text-sm">Precio</p>
+                <p class="text-right font-bold text-sm">Total</p>
+            </div>
+            <div *ngFor="let product of order.products" class="row flex justify-between py-2">
+                <p class="text-xs">{{ product.productName }}</p>
+                <p class="text-center text-xs">{{ product.quant }}</p>
+                <p class="text-center text-xs">{{ product.price | number }}</p>
+                <p class="text-right text-xs font-bold">{{ product.total | number }}</p>
+            </div>    
         </div>
         <h2 class="page-title text-2xl mt-5">
             <span>Valor total:</span>

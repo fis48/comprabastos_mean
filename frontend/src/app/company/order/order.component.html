@@ -1,6 +1,6 @@
 <div class="main-container">
-    <h1 class="page-title text-2xl">
-        Ofertas
+    <h1 *ngIf="company" class="page-title text-2xl">
+        {{ company.name }} - Ofertas
     </h1>
     <nav>
         <button routerLink="/company/list">
@@ -16,7 +16,7 @@
         </ng-template>
     </nav>
     
-    <div *ngFor="let quote of quotes" class="quote-container my-5">
+    <div *ngFor="let quote of quotes" class="quote-container my-5 mt-10">
         <h2 class="page-title text-2xl">
             {{ quote.shopperName }}
         </h2>
@@ -38,9 +38,9 @@
             <div class="flex flex-col mt-5">
                 <div *ngFor="let item of quote.details" class="row flex justify-between">
                     <p class="font-bold">{{ item.productName }}</p>
-                    <p>{{ item.price }}</p>
-                    <p>{{ item.quant }}</p>
-                    <p>{{ item.total | number }}</p>
+                    <p>{{ item.price | number }}</p>
+                    <p>{{ item.quant | number }}</p>
+                    <p class="font-bold">{{ item.total | number }}</p>
                 </div>
             </div>
             <button (click)="handleOrder(quote)" class="mt-5">
