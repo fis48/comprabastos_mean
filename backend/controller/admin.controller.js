@@ -2,7 +2,6 @@ import AdminProductModel from "../models/product.js"
 
 
 export const createProduct = (req, res, next) => {
-
   const { price, name } = req.body
   let prices = []
   let newPrice = {}
@@ -41,4 +40,22 @@ export const updatePrices = (req, res, next) => {
     }).catch((err) => {
       next(err)
     });
+}
+
+export const getProduct = (req, res, next) => {
+  const { id } = req.params
+  AdminProductModel.findById(id)
+    .then(result => {
+      return res.json(result)
+    })  
+    .catch(err => next(err))
+}
+
+export const updateProduct = (req, res, next) => {
+  const { name, productId } = req.body
+  AdminProductModel.findByIdAndUpdate(productId, { name }, { new: true })
+    .then(resp => {
+      return res.json(resp)
+    })
+    .catch(err => next(err))
 }

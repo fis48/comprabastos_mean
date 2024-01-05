@@ -1,0 +1,20 @@
+<div class="main-container">
+    <h1 class="page-title text-2xl">
+        Mis pedidos
+    </h1>
+    <h2 *ngIf="logged" class="font-bold">
+        {{ logged.name }}
+    </h2>
+
+    <nav class="mt-2">
+        <button routerLink="/company">
+            Volver
+        </button>
+    </nav>
+
+    <user-orders *ngIf="logged"
+        [orders]="orders"
+        [userType]="logged.type"
+        class="mt-10"
+    ></user-orders>
+</div>

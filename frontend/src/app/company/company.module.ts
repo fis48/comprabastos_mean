@@ -8,6 +8,7 @@ import { SharedModule } from '../shared/shared.module';
 import { MyListComponent } from './my-list/my-list.component';
 import { OrderComponent } from './order/order.component';
 import { CreatedOrderComponent } from './created-order/created-order.component';
+import { OrdersComponent } from './orders/orders.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { CreatedOrderComponent } from './created-order/created-order.component';
     HomeComponent,
     MyListComponent,
     OrderComponent,
-    CreatedOrderComponent
+    CreatedOrderComponent,
+    OrdersComponent
   ],
   imports: [
     CommonModule,

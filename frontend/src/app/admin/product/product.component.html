@@ -1,1 +1,23 @@
-<p>product works!</p>
+<div class="main-container">
+    <h1 class="page-title text-2xl">
+        Actualización de producto
+    </h1>
+    <nav>
+        <button routerLink="/admin">
+            Volver
+        </button>    
+    </nav>
+
+    <div *ngIf="product" class="flex mt-10">
+        <label for="name">
+            <span>Cambiar nombre</span>
+            <input 
+                type="text"
+                name="name"
+                (change)="handleName($event)"
+                [value]="product.name"
+                class="form-control"
+            >
+        </label>
+    </div>
+</div>

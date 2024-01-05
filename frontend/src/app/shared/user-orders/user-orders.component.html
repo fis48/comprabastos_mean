@@ -1,0 +1,84 @@
+<div class="orders-container mt-5">
+    <div *ngFor="let order of orders" 
+        class="order flex flex-col justify-between mt-5"
+    >
+        <div class="order-details flex flex-col justify-between align-center">
+            <p>
+                <span class="font-bold mr-2">Fecha de creación: </span>
+                {{ order.createdAt | date }}
+            </p>
+            <p *ngIf="userType === 'company'; else companySpan">
+                <span class="font-bold">Vendedor: </span>
+                {{ order.shopperName }}
+            </p>
+            <ng-template #companySpan>
+                <p>
+                    <span class="font-bold">Empresa: </span>
+                    {{ order.companyName }}
+                </p>                
+            </ng-template>
+            <p>
+                <span class="font-bold">Valor: </span>
+                {{ order.total | number }}
+            </p>
+            <p>
+                <span class="font-bold">Estado: </span>
+                {{ order.status }}
+            </p>
+            <p class="font-bold w-1/2">
+                Condiciones de entrega: 
+            </p>
+            <p class="w-1/2">
+                {{ order.deliveryTerms }} 
+            </p>
+        </div>
+        <div *ngIf="showDetails && selectedOrder && order._id === selectedOrder._id" 
+            class="order-details"
+        >
+            <h3 class="page-title text-xl">
+                Productos
+            </h3>
+            <div class="flex my-5">
+                <p class="font-bold w-1/4">Nombre</p>
+                <p class="font-bold w-1/4">Precio</p>
+                <p class="font-bold w-1/4">Cantidad</p>
+                <p class="font-bold w-1/4">Total</p>
+            </div>
+            <div *ngFor="let product of order.products" 
+                class="flex"
+            >
+                <p class="w-1/4 py-1">
+                    {{ product.productName }}
+                </p>
+                <p class="w-1/4">
+                    {{ product.price | number }}
+                </p>
+                <p class="w-1/4">
+                    {{ product.quant }}
+                </p>
+                <p class="w-1/4">
+                    {{ product.total | number }}
+                </p>
+            </div>
+        </div>        
+        <div class="mb-2 flex">
+            <button (click)="toggleDetails(order._id)">
+                Ver productos
+            </button>    
+            <button *ngIf="userType === 'shopper' && order.status === 'CREATED'" 
+                (click)="handleOrderStatus(order, 'SENT')"
+            >
+                Eviar pedido
+            </button>    
+            <button *ngIf="userType === 'company' && order.status === 'SENT'" 
+                (click)="handleOrderStatus(order, 'RECEIVED')"
+            >
+                Recibir pedido
+            </button>    
+        </div>        
+        <!--  -->
+
+
+    </div>
+</div>
+

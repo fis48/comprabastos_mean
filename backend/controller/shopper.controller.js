@@ -1,4 +1,5 @@
 import { quoteExists } from "../helpers/shopper.helper.js";
+import OrderModel from "../models/order.js";
 import QuoteModel from "../models/quote.js";
 import UserModel from "../models/user.js"
 
@@ -72,4 +73,15 @@ export const getQuote = async (req, res, next) => {
   const { companyId, shopperId } = req.params
   const found = await QuoteModel.findOne({ companyId, shopperId })
   return res.json(found)
+}
+
+export const sendOrder = async (req, res, next) => {
+  const { orderId, status } = req.body
+  OrderModel.findByIdAndUpdate(orderId, { status }, { new: true })
+    .then(updated => {
+      res.json(updated)
+    })
+    .catch(err => next(err))
+
+
 }

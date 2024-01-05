@@ -1,4 +1,6 @@
-import { Component, EventEmitter, Input, Output, inject } from '@angular/core';
+import { 
+  Component, EventEmitter, Input, Output, SimpleChanges, inject 
+} from '@angular/core';
 import { IProduct } from 'src/app/interfaces';
 import { ComprabastosService } from 'src/app/services/comprabastos.service';
 // import { } from "@angular/material/icon/";
@@ -24,6 +26,17 @@ export class ItemsTableComponent {
       })
     }
   }
+
+  // ngOnChanges(changes: SimpleChanges) {
+  //   this.items = changes['items'].currentValue
+
+  //   console.log(this.items)
+
+  //   // console.log('changes', changes['items'].currentValue)
+
+
+
+  // }
 
   handleSelected(selected: IProduct) {
     this.sendSelected.emit(selected)

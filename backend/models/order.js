@@ -10,6 +10,10 @@ const OrderSchema = new mongoose.Schema({
         type: Number,
         // required: true
     },
+    shopperId: {
+        type: String,
+        required: true
+    },
     shopperName: {
         type: String,
         required: true
@@ -23,6 +27,13 @@ const OrderSchema = new mongoose.Schema({
         required: true
     },
     shopperPhone: {
+        type: String,
+        required: true
+    },
+    shopperWhatsapp: {
+        type: String
+    },
+    companyId: {
         type: String,
         required: true
     },
@@ -42,6 +53,22 @@ const OrderSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    companyWhatsapp: {
+        type: String
+    },
+    deliveryTerms: {
+        type: String,
+        required: true
+    },
+    paymentTerms: {
+        type: String,
+        required: true
+    },
+    status: {
+        type: String,
+        required: true,
+        default: 'CREATED'
+    }
 },
 {
     timestamps: true,

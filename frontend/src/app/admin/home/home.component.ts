@@ -22,6 +22,9 @@ export class HomeComponent {
     if (adminProducts.length <= 0) {
       console.log('Reload products fired')
       this.cbService.getAdminProducts().subscribe((resp) => {
+
+        // console.log('adminProds', resp)
+
         this.adminProducts = resp
       })      
     }
@@ -36,6 +39,6 @@ export class HomeComponent {
 
   handleUpdatingProduct(updProduct:IProduct) {
     this.cbService.updatingProduct.set(updProduct)
-    this.router.navigate(['/admin/product'])
+    this.router.navigate(['/admin/product', updProduct.id])
   }
 }

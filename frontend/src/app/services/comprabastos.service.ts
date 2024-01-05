@@ -11,6 +11,7 @@ import { IQuote } from '../interfaces/quote';
 })
 export class ComprabastosService {
   private http:HttpClient = inject(HttpClient)
+  private baseUrl = `${ environment.localBackendUri }`
   public adminProducts = signal<IProduct[]>([])
   public logged = signal<IUser | null>(null)
   public onGoingOrder = signal<any>([])
@@ -27,6 +28,10 @@ export class ComprabastosService {
         return products
       })
     )
+  }
+
+  getProduct(productId: string) {
+    return this.http.get(`${this.baseUrl}/product/${productId}`)
   }
 
   handleProduct(product:IProduct) {
@@ -59,7 +64,7 @@ export class ComprabastosService {
   }
 
   saveNewProduct(insData:IProduct) {
-    return this.http.post(`${environment.localBackendUri}/create-product`, insData)
+    return this.http.post(`${this.baseUrl}/create-product`, insData)
   }
 
   getLogged(loggedId:string) {
@@ -111,6 +116,18 @@ export class ComprabastosService {
 
   createUser(createData:IUser) {
     return this.http.post(`${environment.localBackendUri}/register`, createData)
+  }
+
+  updateProduct(updData:any) {
+    return this.http.patch(`${this.baseUrl}/product`, updData)
+  }
+
+  getOrders(userId:string, userType:string | null = null) {
+    return this.http.get(`${this.baseUrl}/orders/${userId}/${userType}`)
+  }
+
+  updateOrderStatus(orderId:string, status:string) {
+    return this.http.patch(`${this.baseUrl}/order-status`, { orderId, status })
   }
 
 }

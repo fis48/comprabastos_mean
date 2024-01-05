@@ -5,6 +5,7 @@ import { TopComponent } from './top/top.component';
 import { ItemsTableComponent } from './items-table/items-table.component';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+import { UserOrdersComponent } from './user-orders/user-orders.component';
 
 
 
@@ -12,7 +13,8 @@ import { MatIconModule } from '@angular/material/icon';
   declarations: [
     SearchComponent,
     TopComponent,
-    ItemsTableComponent
+    ItemsTableComponent,
+    UserOrdersComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +24,8 @@ import { MatIconModule } from '@angular/material/icon';
   exports: [
     SearchComponent,
     TopComponent,
-    ItemsTableComponent
+    ItemsTableComponent,
+    UserOrdersComponent
   ]
 })
 export class SharedModule { }

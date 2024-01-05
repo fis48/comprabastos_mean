@@ -1,20 +1,40 @@
 
 <div class="main-container">
-  <div *ngIf="logged" class="mb-10">
+  <div *ngIf="logged">
     <h1 class="page-title text-2xl">
-      Empresas
-    </h1>
-    <h2 class="font-bold">
       {{ logged.name }}
-    </h2>  
+    </h1>
+    <div class="font-bold">Comprabastos</div>
+
+    <nav>
+      <button routerLink="/">
+        Inicio
+      </button>
+    </nav>
+
+    <h2 class="font-bold text-xl mt-10">
+      Pedidos
+    </h2>
+    <user-orders *ngIf="logged"
+      [orders]="orders"
+      [userType]="logged.type"
+    ></user-orders>
+
   </div>
-  <div *ngFor="let company of companies" class="flex align-center justify-between">
+  
+  <h2 class="font-bold text-xl mt-10">
+    Empresas
+  </h2>  
+  <div *ngFor="let company of companies" 
+    class="flex align-center justify-between my-2"
+  >
     <p>
       {{ company.name }}
     </p>
     <button>
       Entrega y formas de pago
-    </button>    <button [routerLink]="['/shopper/quote', company.id]">
+    </button>    
+    <button [routerLink]="['/shopper/quote', company.id]">
       Cotizar a esta empresa
     </button>
   </div>

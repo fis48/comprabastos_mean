@@ -15,7 +15,11 @@
             </p>
             <p class="flex justify-between">
                 <span class="font-bold">Condiciones de entrega:</span> 
-                Pending info from company register.
+                <span>{{ order.deliveryTerms }}</span>
+            </p>    
+            <p class="flex justify-between">
+                <span class="font-bold">Condiciones de pago:</span> 
+                <span>{{ order.paymentTerms }}</span>
             </p>    
         </div>
         <div class="order-card">
@@ -28,6 +32,10 @@
             <p>
                 <span class="font-bold">Telefono:</span> 
                 {{ order.shopperPhone }}
+            </p>
+            <p>
+                <span class="font-bold">Whatsapp:</span> 
+                {{ order.shopperWhatsapp }}
             </p>
             <p>
                 <span class="font-bold">Email:</span> 
@@ -50,11 +58,15 @@
                 {{ order.companyPhone }}
             </p>
             <p>
+                <span class="font-bold">Whatsapp:</span> 
+                {{ order.companyWhatsapp }}
+            </p>
+            <p>
                 <span class="font-bold">Email:</span> 
                 {{ order.companyEmail }}
             </p>
             <p>
-                <span class="font-bold">Direccion:</span> 
+                <span class="font-bold">Direccion de entrega:</span> 
                 {{ order.companyAddress }}
             </p>
         </div>    

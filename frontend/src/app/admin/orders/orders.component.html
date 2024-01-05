@@ -1,0 +1,13 @@
+<div class="main-container">
+    <h1 class="page-title text-2xl">
+        Pedidos
+    </h1>
+    <nav>
+        <button routerLink="/admin">
+            Volver
+        </button>
+    </nav>
+    <user-orders *ngIf="orders && orders.length > 0"
+        [orders]="orders"    
+    ></user-orders>
+</div>

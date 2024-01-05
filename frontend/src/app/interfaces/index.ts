@@ -1,5 +1,6 @@
 export * from './adminProduct'
 export * from './loginData'
+export * from './order'
 export * from './user'
 export * from './userItems'
 export * from './units.enum'
