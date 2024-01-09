@@ -7,11 +7,19 @@
     <div class="font-bold">Comprabastos</div>
 
     <nav>
+      <button (click)="toggleData('companies')">
+        Empresas
+      </button>
+      <button (click)="toggleData('orders')">
+        Pedidos
+      </button>
       <button routerLink="/">
         Inicio
       </button>
     </nav>
+  </div>
 
+  <div *ngIf="showOrders">
     <h2 class="font-bold text-xl mt-10">
       Pedidos
     </h2>
@@ -19,23 +27,24 @@
       [orders]="orders"
       [userType]="logged.type"
     ></user-orders>
-
   </div>
   
-  <h2 class="font-bold text-xl mt-10">
-    Empresas
-  </h2>  
-  <div *ngFor="let company of companies" 
-    class="flex align-center justify-between my-2"
-  >
-    <p>
-      {{ company.name }}
-    </p>
-    <button>
-      Entrega y formas de pago
-    </button>    
-    <button [routerLink]="['/shopper/quote', company.id]">
-      Cotizar a esta empresa
-    </button>
+  <div *ngIf="showCompanies">
+    <h2 class="font-bold text-xl mt-10">
+      Empresas
+    </h2>  
+    <div *ngFor="let company of companies" 
+      class="flex align-center justify-between my-2"
+    >
+      <p>
+        {{ company.name }}
+      </p>
+      <button>
+        Entrega y formas de pago
+      </button>    
+      <button [routerLink]="['/shopper/quote', company.id]">
+        Cotizar a esta empresa
+      </button>
+    </div>  
   </div>
 </div>

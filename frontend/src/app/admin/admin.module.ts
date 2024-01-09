@@ -10,6 +10,7 @@ import { SharedModule } from '../shared/shared.module';
 import { ProductComponent } from './product/product.component';
 import { PricesComponent } from './prices/prices.component';
 import { OrdersComponent } from './orders/orders.component';
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { OrdersComponent } from './orders/orders.component';
     ProductFormComponent,
     ProductComponent,
     PricesComponent,
-    OrdersComponent
+    OrdersComponent,
+    UsersComponent
   ],
   imports: [
     CommonModule,

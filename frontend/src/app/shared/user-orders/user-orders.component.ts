@@ -1,5 +1,5 @@
 import { Component, Input, SimpleChanges, inject } from '@angular/core';
-import { IOrder } from 'src/app/interfaces';
+import { IOrder, IUser } from 'src/app/interfaces';
 import { ComprabastosService } from 'src/app/services/comprabastos.service';
 
 @Component({
@@ -15,6 +15,17 @@ export class UserOrdersComponent {
 
   public showDetails = false
   public selectedOrder:IOrder | null = null
+  public logged:IUser | null = this.cbService.logged()
+
+  constructor() {
+    const loggedId = localStorage.getItem('token')
+    if (!this.cbService.logged() && loggedId) {
+      this.cbService.getLogged(loggedId).subscribe(resp => {
+        this.cbService.logged.set(resp)
+        this.logged = resp
+      })
+    }
+  }
 
   toggleDetails(orderId:string) {
     this.showDetails = !this.showDetails

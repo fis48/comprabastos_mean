@@ -21,8 +21,6 @@ export class OrdersComponent {
         this.logged = resp
         this.cbService.getOrders(resp.id, 'admin').subscribe((orders:any) => {
           this.orders = orders
-
-          console.log(this.orders)
         })
       })
     }

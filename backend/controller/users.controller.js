@@ -54,7 +54,14 @@ export const logout = (req, res, next) => {
 
 }
 
-export const getUSer = async (req, res, next) => {
+export const getUser = async (req, res, next) => {
   const { userId } = req.params
   const shopper = await UserModel.findById(userId)
+}
+
+export const updateUser = async (req, res, next) => {
+  const { status, userId } = req.body
+  UserModel.findByIdAndUpdate(userId, { status }, { new: true })
+    .then(resp => { return res.json(resp) })
+    .catch(err => next(err))
 }

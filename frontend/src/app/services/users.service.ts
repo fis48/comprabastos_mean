@@ -11,10 +11,11 @@ export class UsersService {
   private http:HttpClient = inject(HttpClient)
   private router = inject(Router)
   private cbService = inject(ComprabastosService)
-  
+  private baseUrl = 'http://localhost:8000/api'
+
 
   login(loginData:ILoginData) {
-    return this.http.post('http://localhost:8000/api/login', loginData)
+    return this.http.post(`${this.baseUrl}/login`, loginData)
   }
 
   logout() {
@@ -24,8 +25,14 @@ export class UsersService {
     this.cbService.logged.set(null)
     localStorage.removeItem('token')
     this.router.navigate(['/'])
-    
-
-
   }
+
+  getUsers() {
+    return this.http.get(`${this.baseUrl}/users`)
+  }
+
+  updateUser(updData:any) {
+    return this.http.patch(`${this.baseUrl}/user`, updData)
+  }
+
 }

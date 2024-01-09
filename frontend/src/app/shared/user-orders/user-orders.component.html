@@ -17,6 +17,10 @@
                     {{ order.companyName }}
                 </p>                
             </ng-template>
+            <p *ngIf="logged && logged.type === 'admin'">
+                <span class="font-bold">Shopper: </span>
+                {{ order.shopperName }}
+            </p>
             <p>
                 <span class="font-bold">Valor: </span>
                 {{ order.total | number }}

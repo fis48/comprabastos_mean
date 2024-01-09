@@ -1,4 +1,5 @@
 import AdminProductModel from "../models/product.js"
+import UserModel from "../models/user.js"
 
 
 export const createProduct = (req, res, next) => {
@@ -58,4 +59,14 @@ export const updateProduct = (req, res, next) => {
       return res.json(resp)
     })
     .catch(err => next(err))
+}
+
+export const getUsers = (req, res, next) => {
+  UserModel.find()
+    .then(result => {
+      return res.json(result)
+    })
+    .catch(err => next(err))
+  
+
 }

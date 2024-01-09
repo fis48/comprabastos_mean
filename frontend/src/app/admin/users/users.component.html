@@ -1,0 +1,148 @@
+<div class="main-container">
+    <h1 class="page-title text-2xl">
+        Usuarios registrados
+    </h1>
+    <h2 class="font-bold">
+        Administrador
+    </h2>
+    <nav>
+        <button routerLink="/admin">
+            Volver
+        </button>
+    </nav>
+
+    <div *ngIf="updatingUser" class="user-update my-5">
+        <h2 class="text-xl">
+            Actualización de usuarios
+        </h2>
+        <div class="flex">
+            <button (click)="cancelUpdating()">
+                Cancelar
+            </button>
+            <button 
+                *ngIf="updatingUser.status === 'ON_HOLD'; else deactivate"
+                (click)="handleUserStatus('ACTIVE')"
+            >
+                Activar usuario
+            </button>
+            <ng-template #deactivate>
+                <button
+                (click)="handleUserStatus('ON_HOLD')"
+                >
+                    Desactivar usuario
+                </button>
+            </ng-template>
+        </div>
+        <div class="form-container">
+            <form [formGroup]="userForm" (submit)="handleUserUpdate()">
+                <label for="type">
+                    <span>Tipo de usuario</span>
+                    <select 
+                        name="type"
+                        formControlName="type" 
+                        class="form-control"
+                    >
+                        <option value="">Seleccione un tipo de usuario</option>
+                        <option value="company">Soy comprador</option>
+                        <option value="shopper">Soy vendedor</option>
+                    </select>
+                </label>
+                <label for="name">
+                    <span>Nombre empresa</span>
+                    <input 
+                        type="text"
+                        name="name"
+                        class="form-control"
+                        formControlName="name"
+                    >
+                </label>
+                <label for="nit">
+                    <span>NIT</span>
+                    <input 
+                        type="text"
+                        name="nit"
+                        class="form-control"
+                    >
+                </label>
+                <label for="nit">
+                    <span>Representante legal</span>
+                    <input 
+                        type="text"
+                        name="legal"
+                        class="form-control"
+                    >
+                </label>
+                <label for="email">
+                    <span>Email</span>
+                    <input 
+                        type="email"
+                        name="email"
+                        class="form-control"
+                        formControlName="email"
+                    >
+                </label>
+                <label for="address">
+                    <span>Direccion</span>
+                    <input 
+                        type="text"
+                        name="address"
+                        class="form-control"
+                        formControlName="address"
+                    >
+                </label>
+                <label for="Phone">
+                    <span>Celular</span>
+                    <input 
+                        type="text"
+                        name="Phone"
+                        class="form-control"
+                        formControlName="phone"
+                    >
+                </label>
+                <label for="whatsapp">
+                    <span>Whatsapp</span>
+                    <input 
+                        type="text"
+                        name="whatsapp"
+                        class="form-control"
+                        formControlName="whatsapp"
+                    >
+                </label>
+    
+                <button type="submit">
+                    Guardar cambios
+                </button>
+            </form>    
+        </div>
+
+    </div>
+
+    <div class="flex flex-col mt-10">
+        <h2 class="page-title text-xl">
+            Empresas
+        </h2>
+        <div class="flex flex-col cursor-pointer">
+            <p 
+                *ngFor="let company of users.companies" 
+                class="mt-2"
+                (click)="toggleUpdatingUser(company)"
+            >
+                {{ company.name }}
+            </p>
+        </div>    
+    </div>
+    <div class="flex flex-col mt-10">
+        <h2 class="page-title text-xl">
+            Shoppers
+        </h2>
+        <div class="flex flex-col mt-2 cursor-pointer">
+            <p 
+                *ngFor="let shopper of users.shoppers" 
+                class="mt-2"
+                (click)="toggleUpdatingUser(shopper)"
+            >
+                {{ shopper.name }}
+            </p>
+        </div>
+    </div>
+</div>
