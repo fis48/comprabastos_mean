@@ -26,9 +26,9 @@ app.use((err, req, res, next) => {
 
   let errMsg = 'Server error'
   res.status(500)
-  if (err.message.includes('tal')) {
-    errMsg = "Tal error"
-    res.status(301)
+  if (err.message.includes('Wrong or missing data')) {
+    errMsg = "Información de registro invalida."
+    res.status(400)
   }
 
   return res.json({ error: errMsg })

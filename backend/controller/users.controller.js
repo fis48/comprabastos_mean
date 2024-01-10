@@ -7,6 +7,13 @@ export const login = (req, res, next) => {
   const { email } = req.body
   UserModel.findOne({ email })
     .then((user) => {
+
+      console.log('user::', user)
+
+      if (!email) {
+        next(new Error('Wrong or missing data'))
+      }
+
       return res.json(user)
 
       // switch (user.type) {
