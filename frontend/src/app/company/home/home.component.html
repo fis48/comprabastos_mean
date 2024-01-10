@@ -1,8 +1,11 @@
 <div class="main-container">
 
-  <h1 *ngIf="logged" class="page-title text-2xl mb-1">
+  <h1 *ngIf="logged" class="page-title text-2xl">
     {{ logged.name }}
   </h1>
+  <h2 class="font-bold mb-5">
+    Comprabastos
+  </h2>
   <nav>
     <button routerLink="/company/list">
       Mi lista
@@ -15,6 +18,18 @@
     </button>
   </nav>
 
+  <div class="flex">
+    <div class="chart-container w-1/2 px-5">
+      <canvas baseChart
+        [type]="'pie'"
+        [datasets]="pieChartData"
+        [labels]="pieChartLabels"
+        [options]="pieChartOptions"
+      ></canvas>
+    </div>
+  </div>
+
+  <!-- products table -->
   <app-items-table 
     [items]="adminProducts"
     [showDates]="true"

@@ -9,6 +9,7 @@ import { MyListComponent } from './my-list/my-list.component';
 import { OrderComponent } from './order/order.component';
 import { CreatedOrderComponent } from './created-order/created-order.component';
 import { OrdersComponent } from './orders/orders.component';
+import { NgChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { OrdersComponent } from './orders/orders.component';
   imports: [
     CommonModule,
     CompanyRoutingModule,
-    SharedModule
+    SharedModule,
+    NgChartsModule
   ]
 })
 export class CompanyModule { }

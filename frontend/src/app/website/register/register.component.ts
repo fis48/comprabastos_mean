@@ -19,6 +19,8 @@ export class RegisterComponent {
   constructor() {
     this.registerForm = this.formBuilder.group({
       name: [''],
+      nit: [''],
+      legalRep: [''],
       email: [''],
       address: [''],
       phone: [''],

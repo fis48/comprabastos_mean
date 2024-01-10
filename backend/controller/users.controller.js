@@ -29,6 +29,9 @@ export const login = (req, res, next) => {
 }
 
 export const register = (req, res, next) => {
+
+  console.log('body::', req.body)
+
   const newUser = new UserModel(req.body)
   switch (newUser.type) {
     case 'company':

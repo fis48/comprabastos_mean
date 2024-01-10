@@ -15,6 +15,14 @@ const userShema = new mongoose.Schema({
     type: String,
     required: true
   },
+  nit: {
+    type: String,
+    required: true
+  },
+  legalRep: {
+    type: String,
+    required: true
+  }, 
   phone: {
     type: String,
     required: true,

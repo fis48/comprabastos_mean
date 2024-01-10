@@ -26,7 +26,8 @@ export const updateCompanyList = (req, res, next) => {
 export const getCompanyQuotes = (req, res, next) => {
   const { companyId } = req.params
   if (companyId) {
-    QuoteModel.find({ companyId })
+    const now = new Date().getTime()
+    QuoteModel.find({ companyId, dueDate: { $gt: now } })
       .then(result => {
         return res.json(result)
       })

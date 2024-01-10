@@ -1,7 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { ComprabastosService } from '../../services/comprabastos.service';
-import { IProduct, IUser, Units } from 'src/app/interfaces';
+import { IOrder, IProduct, IUser, Units } from 'src/app/interfaces';
 import { Router } from '@angular/router';
+import { ChartConfiguration, ChartDataset } from 'chart.js';
 
 
 @Component({
@@ -15,9 +16,17 @@ export class HomeComponent {
 
   public adminProducts:IProduct[] = []
   public logged: IUser | null = null
-
   public showCreateOrder:boolean = false
   public units = Units
+  // pie chart
+  public pieChartData = [{data: []}]
+  public pieChartLabels:any[] = []
+  public pieChartOptions: any = { 
+    plugins: {
+      legend: { position: 'left' } 
+    }
+  }
+
 
   constructor() {
     this.handleProducts()
@@ -29,6 +38,7 @@ export class HomeComponent {
     if (loggedId) {
       this.cbService.getLogged(loggedId).subscribe(resp => {
         this.logged = resp
+        this.handleOrders()
       })
     }
     else {
@@ -47,6 +57,40 @@ export class HomeComponent {
     else {
       this.adminProducts = adminProducts
     }    
+  }
+
+  handleOrders() {
+    if (this.logged && this.logged.id) {
+      this.cbService.getOrders(this.logged.id, this.logged.type)
+        .subscribe((orders:any) => {
+          this.handleSales(orders)
+        })
+    }
+  }
+
+  handleSales(orders:IOrder[]) {
+    let sales:any = {}
+    let pieLabels:string[][] = []
+    let pieValues:[] = []
+
+    orders.forEach((order:any) => {
+      order.products.forEach((product:any) => {
+        if (!sales[product.productName]) {
+          sales[product.productName] = []          
+        }
+        sales[product.productName].push(product.total)        
+      });
+    });
+
+    Object.keys(sales).forEach((key:string) => {
+      // labels
+      pieLabels.push([key])
+      // values
+      let total = sales[key].reduce((a:number, b:number) => a + b)
+      pieValues.push(total as never)
+    });
+    this.pieChartLabels = pieLabels
+    this.pieChartData[0].data = pieValues
   }
 
   toggleCreatingOrder(){
