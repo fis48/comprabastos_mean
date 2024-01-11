@@ -11,7 +11,8 @@ export class UsersService {
   private http:HttpClient = inject(HttpClient)
   private router = inject(Router)
   private cbService = inject(ComprabastosService)
-  private baseUrl = 'http://localhost:8000/api'
+  // private baseUrl = 'http://localhost:8000/api'
+  private baseUrl = 'https://comprabastos-api.onrender.com/api'
 
 
   login(loginData:ILoginData) {
