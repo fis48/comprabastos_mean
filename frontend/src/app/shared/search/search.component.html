@@ -15,7 +15,7 @@
     <div *ngFor="let product of foundProducts" class="found-row">
       <p>{{ product.name }}</p>
       <button (click)="hanldeSelected(product)">
-        Agregar a mi lista
+        {{ btnText }}
       </button>
     </div>
   </div>  

@@ -8,6 +8,7 @@ import { IProduct } from 'src/app/interfaces';
 })
 export class SearchComponent {
   @Input() adminProducts:IProduct[] = []
+  @Input() btnText:string | null = null
   @Output() sendSelected = new EventEmitter()
 
   public foundProducts:IProduct[] = []

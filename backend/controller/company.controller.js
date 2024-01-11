@@ -1,4 +1,5 @@
 import { getOfferTotal } from "../helpers/company.helper.js";
+import GlobalPriceModel from "../models/globalPrice.js";
 import OrderModel from "../models/order.js";
 import QuoteModel from "../models/quote.js";
 import UserModel from "../models/user.js";
@@ -83,4 +84,13 @@ export const getOrders = async (req, res, next) => {
       return res.json(resp)
     })
     .catch(err => next(err)) 
+}
+
+export const getVariation = async (req, res, next) => {
+  const { productId } = req.params
+  GlobalPriceModel.find({ productId })
+    .then(resp => {
+      return res.json(resp)
+    })
+    .catch(err => next(err))
 }

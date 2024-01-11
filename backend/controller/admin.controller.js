@@ -1,3 +1,4 @@
+import GlobalPriceModel from "../models/globalPrice.js"
 import AdminProductModel from "../models/product.js"
 import UserModel from "../models/user.js"
 
@@ -43,6 +44,15 @@ export const updatePrices = (req, res, next) => {
     });
 }
 
+export const updateGlobalPrices = (req, res, next) => {
+  const newGlobalPrice = new GlobalPriceModel(req.body)
+  newGlobalPrice.save()
+    .then(created => {
+      return res.json(created)
+    })
+    .catch(err => next(err))
+}
+
 export const getProduct = (req, res, next) => {
   const { id } = req.params
   AdminProductModel.findById(id)
@@ -69,4 +79,20 @@ export const getUsers = (req, res, next) => {
     .catch(err => next(err))
   
 
+}
+
+export const clearPrices = (req, res, next) => {
+  const prices = AdminProductModel.find()
+    .then(resp => {
+      resp.forEach(element => {
+        AdminProductModel.findByIdAndUpdate(element._id, { prices: [] })
+          .then(cResp => {
+
+            console.log('cResp::', cResp)
+
+          } )
+          .catch(err => console.log(err))
+      });
+    })
+    .catch(err => console.log(err))
 }

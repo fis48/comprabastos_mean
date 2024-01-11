@@ -52,12 +52,29 @@ export class PricesComponent {
         return a.value + b.value 
       })
       const newAvg = sum / newPrices.length
+
+      console.log('prod', this.updatingProduct)
+      console.log('new', newItem)
+
       this.cbService.updatePrices(this.updatingProduct.id, newPrices)
         .subscribe(resp => {
           this.cbService.getAdminProducts().subscribe(prods => {
             this.pricesList = prods
           })
         })
+
+      const newGlobalPrice = {
+        timestamp: newItem.timestamp,
+        value: newItem.value,
+        productId: this.updatingProduct.id,
+        productName: this.updatingProduct.name
+      }
+      this.cbService.updateGlobalPrices(newGlobalPrice).subscribe(resp => {
+
+        console.log('new global price', resp)
+
+      })
+        
     }
   }
 

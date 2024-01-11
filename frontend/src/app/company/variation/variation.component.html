@@ -1,0 +1,27 @@
+<div class="main-container">
+    <h1 class="page-title text-2xl">
+        Variación de precios
+    </h1>
+    <h2 class="font-bold">
+        Comprabastos
+    </h2>
+    <nav>
+        <button routerLink="/company">
+            Volver
+        </button>
+    </nav>
+
+    <app-search
+        [adminProducts]="adminProducts"
+        btnText="Ver variación"
+        (sendSelected)="handleSelected($event)"
+    ></app-search>
+
+    <div *ngIf="selected" class="chart-container">
+        <canvas baseChart
+        [type]="'line'"
+        [data]="chartData"
+    ></canvas>
+    </div>
+
+</div>

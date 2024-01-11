@@ -19,13 +19,27 @@
   </nav>
 
   <div class="flex">
-    <div class="chart-container w-1/2 px-5">
-      <canvas baseChart
+    <div class="chart-container px-5 py-20">
+        <h3 class="page-title text-xl text-center mb-5">
+          Productos comprados
+        </h3>
+        <canvas baseChart
         [type]="'pie'"
         [datasets]="pieChartData"
         [labels]="pieChartLabels"
         [options]="pieChartOptions"
       ></canvas>
+    </div>
+    <div class="variation-btn-container">
+      <h3 class="page-title text-xl">
+        Variación de precios
+      </h3>
+      <p>
+        Revise la variación en los precios de nuestros productos durante el último trimestre.
+      </p>
+      <button routerLink="/company/variation" class="main-btn mt-5">
+        Ver variación
+      </button>
     </div>
   </div>
 

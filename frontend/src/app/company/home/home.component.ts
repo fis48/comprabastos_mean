@@ -2,7 +2,6 @@ import { Component, inject } from '@angular/core';
 import { ComprabastosService } from '../../services/comprabastos.service';
 import { IOrder, IProduct, IUser, Units } from 'src/app/interfaces';
 import { Router } from '@angular/router';
-import { ChartConfiguration, ChartDataset } from 'chart.js';
 
 
 @Component({
@@ -23,7 +22,7 @@ export class HomeComponent {
   public pieChartLabels:any[] = []
   public pieChartOptions: any = { 
     plugins: {
-      legend: { position: 'left' } 
+      legend: { position: 'bottom' } 
     }
   }
 

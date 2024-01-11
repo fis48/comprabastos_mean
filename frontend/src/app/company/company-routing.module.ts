@@ -5,6 +5,7 @@ import { MyListComponent } from './my-list/my-list.component';
 import { OrderComponent } from './order/order.component';
 import { CreatedOrderComponent } from './created-order/created-order.component';
 import { OrdersComponent } from './orders/orders.component';
+import { VariationComponent } from './variation/variation.component';
 
 const routes: Routes = [
   {
@@ -26,8 +27,11 @@ const routes: Routes = [
   {
     path: 'created-order',
     component: CreatedOrderComponent
+  },
+  {
+    path: 'variation',
+    component: VariationComponent
   }
-
 ];
 
 @NgModule({

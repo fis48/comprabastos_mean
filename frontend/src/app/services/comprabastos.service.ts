@@ -103,6 +103,10 @@ export class ComprabastosService {
     return this.http.patch(`${environment.localBackendUri}/product-prices`, updData)
   }
 
+  updateGlobalPrices(updData:any) {
+    return this.http.patch(`${environment.localBackendUri}/global-prices`, updData)
+  }
+
   createOrder(company:IUser, offer:any) {
     return this.http.post(`${environment.localBackendUri}/order`, {
       company,
@@ -128,6 +132,10 @@ export class ComprabastosService {
 
   updateOrderStatus(orderId:string, status:string) {
     return this.http.patch(`${this.baseUrl}/order-status`, { orderId, status })
+  }
+
+  getVariation(productId:string) {
+    return this.http.get(`${this.baseUrl}/variation/${productId}`)
   }
 
 }

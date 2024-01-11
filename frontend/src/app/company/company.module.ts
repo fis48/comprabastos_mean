@@ -10,6 +10,7 @@ import { OrderComponent } from './order/order.component';
 import { CreatedOrderComponent } from './created-order/created-order.component';
 import { OrdersComponent } from './orders/orders.component';
 import { NgChartsModule } from 'ng2-charts';
+import { VariationComponent } from './variation/variation.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { NgChartsModule } from 'ng2-charts';
     MyListComponent,
     OrderComponent,
     CreatedOrderComponent,
-    OrdersComponent
+    OrdersComponent,
+    VariationComponent
   ],
   imports: [
     CommonModule,
