@@ -11,7 +11,7 @@ import { IQuote } from '../interfaces/quote';
 })
 export class ComprabastosService {
   private http:HttpClient = inject(HttpClient)
-  private baseUrl = `${ environment.localBackendUri }`
+  private baseUrl = `${ environment.productionBackendUri }`
   public adminProducts = signal<IProduct[]>([])
   public logged = signal<IUser | null>(null)
   public onGoingOrder = signal<any>([])
@@ -19,7 +19,7 @@ export class ComprabastosService {
   public updatingProduct = signal<IProduct | null>(null)
 
   getAdminProducts() {
-    return this.http.get(`${environment.localBackendUri}/admin-products`).pipe(
+    return this.http.get(`${this.baseUrl}/admin-products`).pipe(
       map((resp:any) => {
         const products = resp.map((product:IProduct) => {
           return this.handleProduct(product)
@@ -68,7 +68,7 @@ export class ComprabastosService {
   }
 
   getLogged(loggedId:string) {
-    return this.http.post(`${environment.localBackendUri}/logged`, { loggedId }).pipe(
+    return this.http.post(`${this.baseUrl}/logged`, { loggedId }).pipe(
       tap((resp:any) => {
         this.logged.set(resp)
       })
@@ -76,23 +76,23 @@ export class ComprabastosService {
   }
 
   updateCompanyList(list:IUserItems[], companyId:string) {
-    return this.http.patch(`${environment.localBackendUri}/company-list`, { companyId, list })
+    return this.http.patch(`${this.baseUrl}/company-list`, { companyId, list })
   }
   
   getCompanies() {
-    return this.http.get(`${environment.localBackendUri}/companies`)
+    return this.http.get(`${this.baseUrl}/companies`)
   }
 
   getCompany(companyId: string) {
-    return this.http.get(`${environment.localBackendUri}/company/${companyId}`)
+    return this.http.get(`${this.baseUrl}/company/${companyId}`)
   }
 
   updateQuote(quote:IQuote) {
-    return this.http.post(`${environment.localBackendUri}/quote`, quote)
+    return this.http.post(`${this.baseUrl}/quote`, quote)
   }
   
   getQuotes(companyId: string) {
-    return this.http.get(`${environment.localBackendUri}/quotes/${companyId}`)
+    return this.http.get(`${this.baseUrl}/quotes/${companyId}`)
   }
   
   updatePrices(productId: string, prices: any) {
@@ -100,26 +100,26 @@ export class ComprabastosService {
       productId,
       prices
     }
-    return this.http.patch(`${environment.localBackendUri}/product-prices`, updData)
+    return this.http.patch(`${this.baseUrl}/product-prices`, updData)
   }
 
   updateGlobalPrices(updData:any) {
-    return this.http.patch(`${environment.localBackendUri}/global-prices`, updData)
+    return this.http.patch(`${this.baseUrl}/global-prices`, updData)
   }
 
   createOrder(company:IUser, offer:any) {
-    return this.http.post(`${environment.localBackendUri}/order`, {
+    return this.http.post(`${this.baseUrl}/order`, {
       company,
       offer
     })
   }
 
   getQuote(companyId: string, shopperId: string) {
-    return this.http.get(`${environment.localBackendUri}/quote/${companyId}/${shopperId}`)
+    return this.http.get(`${this.baseUrl}/quote/${companyId}/${shopperId}`)
   }
 
   createUser(createData:IUser) {
-    return this.http.post(`${environment.localBackendUri}/register`, createData)
+    return this.http.post(`${this.baseUrl}/register`, createData)
   }
 
   updateProduct(updData:any) {

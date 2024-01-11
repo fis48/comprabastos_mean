@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
+import { environment } from "../../environments/environment.development";
 import { ILoginData } from '../interfaces/loginData';
 import { Router } from '@angular/router';
 import { ComprabastosService } from './comprabastos.service';
@@ -12,7 +13,8 @@ export class UsersService {
   private router = inject(Router)
   private cbService = inject(ComprabastosService)
   // private baseUrl = 'http://localhost:8000/api'
-  private baseUrl = 'https://comprabastos-api.onrender.com/api'
+  // private baseUrl = 'https://comprabastos-api.onrender.com/api'
+  private baseUrl = `${ environment.productionBackendUri }`
 
 
   login(loginData:ILoginData) {
