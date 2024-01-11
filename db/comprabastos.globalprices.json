@@ -1,0 +1,252 @@
+[{
+  "_id": {
+    "$oid": "65a01022e08d7db941c2d0e6"
+  },
+  "timestamp": {
+    "$numberLong": "1704988706802"
+  },
+  "value": 8000,
+  "productId": "657a5c001614d627b7876028",
+  "productName": "Tomate verde kilo",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a0102fe08d7db941c2d0ed"
+  },
+  "timestamp": {
+    "$numberLong": "1704988719377"
+  },
+  "value": 20000,
+  "productId": "657a5c1d1614d627b787602b",
+  "productName": "Tomate verde canastilla",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a01036e08d7db941c2d0f5"
+  },
+  "timestamp": {
+    "$numberLong": "1704988726084"
+  },
+  "value": 7000,
+  "productId": "657a5c461614d627b7876031",
+  "productName": "Cebolla junca kilo",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a0103ee08d7db941c2d0fe"
+  },
+  "timestamp": {
+    "$numberLong": "1704988734701"
+  },
+  "value": 48000,
+  "productId": "657a5c531614d627b7876034",
+  "productName": "Cebolla junca bulto",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a0104be08d7db941c2d10d"
+  },
+  "timestamp": {
+    "$numberLong": "1704988747589"
+  },
+  "value": 18000,
+  "productId": "657a5c671614d627b7876037",
+  "productName": "Mango de azucar canastilla",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a0105fe08d7db941c2d118"
+  },
+  "timestamp": {
+    "$numberLong": "1704988767748"
+  },
+  "value": 9000,
+  "productId": "657a5c6f1614d627b787603a",
+  "productName": "Mango de azucar kilo",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a01067e08d7db941c2d124"
+  },
+  "timestamp": {
+    "$numberLong": "1704988775035"
+  },
+  "value": 32000,
+  "productId": "6595e02911552ee9bd0a6416",
+  "productName": "Aguacate criollo canastilla",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a01084e08d7db941c2d143"
+  },
+  "timestamp": {
+    "$numberLong": "1704988804295"
+  },
+  "value": 8500,
+  "productId": "657a5c001614d627b7876028",
+  "productName": "Tomate verde kilo",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a0108ae08d7db941c2d153"
+  },
+  "timestamp": {
+    "$numberLong": "1704988810669"
+  },
+  "value": 19700,
+  "productId": "657a5c1d1614d627b787602b",
+  "productName": "Tomate verde canastilla",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a01093e08d7db941c2d164"
+  },
+  "timestamp": {
+    "$numberLong": "1704988819165"
+  },
+  "value": 7300,
+  "productId": "657a5c461614d627b7876031",
+  "productName": "Cebolla junca kilo",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a0109be08d7db941c2d176"
+  },
+  "timestamp": {
+    "$numberLong": "1704988827750"
+  },
+  "value": 49000,
+  "productId": "657a5c531614d627b7876034",
+  "productName": "Cebolla junca bulto",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a010a5e08d7db941c2d189"
+  },
+  "timestamp": {
+    "$numberLong": "1704988837886"
+  },
+  "value": 18800,
+  "productId": "657a5c671614d627b7876037",
+  "productName": "Mango de azucar canastilla",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a010abe08d7db941c2d19d"
+  },
+  "timestamp": {
+    "$numberLong": "1704988843126"
+  },
+  "value": 8900,
+  "productId": "657a5c6f1614d627b787603a",
+  "productName": "Mango de azucar kilo",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a010b0e08d7db941c2d1b2"
+  },
+  "timestamp": {
+    "$numberLong": "1704988848639"
+  },
+  "value": 33000,
+  "productId": "6595e02911552ee9bd0a6416",
+  "productName": "Aguacate criollo canastilla",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a0129ce08d7db941c2d1e8"
+  },
+  "timestamp": {
+    "$numberLong": "1704989340508"
+  },
+  "value": 8700,
+  "productId": "657a5c001614d627b7876028",
+  "productName": "Tomate verde kilo",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a012a5e08d7db941c2d201"
+  },
+  "timestamp": {
+    "$numberLong": "1704989349282"
+  },
+  "value": 21000,
+  "productId": "657a5c1d1614d627b787602b",
+  "productName": "Tomate verde canastilla",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a012afe08d7db941c2d21b"
+  },
+  "timestamp": {
+    "$numberLong": "1704989359074"
+  },
+  "value": 7500,
+  "productId": "657a5c461614d627b7876031",
+  "productName": "Cebolla junca kilo",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a012b6e08d7db941c2d236"
+  },
+  "timestamp": {
+    "$numberLong": "1704989366635"
+  },
+  "value": 51000,
+  "productId": "657a5c531614d627b7876034",
+  "productName": "Cebolla junca bulto",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a012bfe08d7db941c2d252"
+  },
+  "timestamp": {
+    "$numberLong": "1704989375578"
+  },
+  "value": 20000,
+  "productId": "657a5c671614d627b7876037",
+  "productName": "Mango de azucar canastilla",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a012d1e08d7db941c2d26f"
+  },
+  "timestamp": {
+    "$numberLong": "1704989393723"
+  },
+  "value": 7400,
+  "productId": "657a5c6f1614d627b787603a",
+  "productName": "Mango de azucar kilo",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65a012dde08d7db941c2d28d"
+  },
+  "timestamp": {
+    "$numberLong": "1704989405798"
+  },
+  "value": 30000,
+  "productId": "6595e02911552ee9bd0a6416",
+  "productName": "Aguacate criollo canastilla",
+  "__v": 0
+}]

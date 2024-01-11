@@ -6,11 +6,29 @@
   "prices": [
     {
       "timestamp": {
-        "$numberLong": "1702517760088"
+        "$numberLong": "1704988804295"
       },
-      "value": 2000,
+      "value": 8500,
       "_id": {
-        "$oid": "657a5c001614d627b7876029"
+        "$oid": "65a01084e08d7db941c2d13f"
+      }
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1704988706802"
+      },
+      "value": 8000,
+      "_id": {
+        "$oid": "65a01022e08d7db941c2d0e3"
+      }
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1704989340508"
+      },
+      "value": 8700,
+      "_id": {
+        "$oid": "65a0129ce08d7db941c2d1e3"
       }
     }
   ],
@@ -24,11 +42,29 @@
   "prices": [
     {
       "timestamp": {
-        "$numberLong": "1702517789787"
+        "$numberLong": "1704988810669"
       },
-      "value": 24000,
+      "value": 19700,
       "_id": {
-        "$oid": "657a5c1d1614d627b787602c"
+        "$oid": "65a0108ae08d7db941c2d14f"
+      }
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1704988719377"
+      },
+      "value": 20000,
+      "_id": {
+        "$oid": "65a0102fe08d7db941c2d0ea"
+      }
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1704989349282"
+      },
+      "value": 21000,
+      "_id": {
+        "$oid": "65a012a5e08d7db941c2d1fc"
       }
     }
   ],
@@ -42,11 +78,29 @@
   "prices": [
     {
       "timestamp": {
-        "$numberLong": "1702517830510"
+        "$numberLong": "1704988819165"
       },
-      "value": 1200,
+      "value": 7300,
       "_id": {
-        "$oid": "657a5c461614d627b7876032"
+        "$oid": "65a01093e08d7db941c2d160"
+      }
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1704988726084"
+      },
+      "value": 7000,
+      "_id": {
+        "$oid": "65a01036e08d7db941c2d0f2"
+      }
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1704989359074"
+      },
+      "value": 7500,
+      "_id": {
+        "$oid": "65a012afe08d7db941c2d216"
       }
     }
   ],
@@ -60,11 +114,29 @@
   "prices": [
     {
       "timestamp": {
-        "$numberLong": "1702517843046"
+        "$numberLong": "1704988827750"
       },
-      "value": 20000,
+      "value": 49000,
       "_id": {
-        "$oid": "657a5c531614d627b7876035"
+        "$oid": "65a0109be08d7db941c2d172"
+      }
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1704988734701"
+      },
+      "value": 48000,
+      "_id": {
+        "$oid": "65a0103ee08d7db941c2d0fb"
+      }
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1704989366635"
+      },
+      "value": 51000,
+      "_id": {
+        "$oid": "65a012b6e08d7db941c2d231"
       }
     }
   ],
@@ -78,11 +150,29 @@
   "prices": [
     {
       "timestamp": {
-        "$numberLong": "1702517863497"
+        "$numberLong": "1704988837886"
       },
-      "value": 22000,
+      "value": 18800,
       "_id": {
-        "$oid": "657a5c671614d627b7876038"
+        "$oid": "65a010a5e08d7db941c2d185"
+      }
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1704988747589"
+      },
+      "value": 18000,
+      "_id": {
+        "$oid": "65a0104be08d7db941c2d10a"
+      }
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1704989375578"
+      },
+      "value": 20000,
+      "_id": {
+        "$oid": "65a012bfe08d7db941c2d24d"
       }
     }
   ],
@@ -96,11 +186,65 @@
   "prices": [
     {
       "timestamp": {
-        "$numberLong": "1702517871564"
+        "$numberLong": "1704988843126"
       },
-      "value": 7500,
+      "value": 8900,
       "_id": {
-        "$oid": "657a5c6f1614d627b787603b"
+        "$oid": "65a010abe08d7db941c2d199"
+      }
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1704988767748"
+      },
+      "value": 9000,
+      "_id": {
+        "$oid": "65a0105fe08d7db941c2d115"
+      }
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1704989393723"
+      },
+      "value": 7400,
+      "_id": {
+        "$oid": "65a012d1e08d7db941c2d26a"
+      }
+    }
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6595e02911552ee9bd0a6416"
+  },
+  "name": "Aguacate criollo canastilla",
+  "prices": [
+    {
+      "timestamp": {
+        "$numberLong": "1704988848639"
+      },
+      "value": 33000,
+      "_id": {
+        "$oid": "65a010b0e08d7db941c2d1ae"
+      }
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1704988775035"
+      },
+      "value": 32000,
+      "_id": {
+        "$oid": "65a01067e08d7db941c2d121"
+      }
+    },
+    {
+      "timestamp": {
+        "$numberLong": "1704989405798"
+      },
+      "value": 30000,
+      "_id": {
+        "$oid": "65a012dde08d7db941c2d288"
       }
     }
   ],

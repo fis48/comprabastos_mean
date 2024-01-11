@@ -1,44 +1,36 @@
 [{
   "_id": {
-    "$oid": "65810f0b6f33eb1f9fc5cdb6"
+    "$oid": "659ed1925286b6b257aa9bba"
   },
-  "shopperId": "657a5cb91614d627b787604d",
+  "shopperId": "659ecf2d5286b6b257aa9aa9",
   "shopperName": "Shopper 1",
-  "companyId": "657a5c9f1614d627b787604b",
+  "companyId": "659ecec25286b6b257aa9a83",
   "dueDate": {
-    "$date": "2023-12-21T00:00:00.000Z"
+    "$date": "2024-01-13T00:00:00.000Z"
   },
   "products": [
     {
-      "productId": "657a5c001614d627b7876028",
-      "productName": "Tomate verde kilo",
-      "value": 10,
+      "productId": "6595e02911552ee9bd0a6416",
+      "productName": "Aguacate criollo canastilla",
+      "value": 25000,
       "_id": {
-        "$oid": "65810f0b6f33eb1f9fc5cdb7"
+        "$oid": "659ed1925286b6b257aa9bbb"
       }
     },
     {
       "productId": "657a5c461614d627b7876031",
       "productName": "Cebolla junca kilo",
-      "value": 10,
+      "value": 8000,
       "_id": {
-        "$oid": "65810f0b6f33eb1f9fc5cdb8"
+        "$oid": "659ed1925286b6b257aa9bbc"
       }
     },
     {
       "productId": "657a5c1d1614d627b787602b",
       "productName": "Tomate verde canastilla",
-      "value": 10,
+      "value": 24000,
       "_id": {
-        "$oid": "65810f0b6f33eb1f9fc5cdb9"
-      }
-    },
-    {
-      "productId": "657a5c6f1614d627b787603a",
-      "productName": "Mango de azucar kilo",
-      "value": 10,
-      "_id": {
-        "$oid": "65810f0b6f33eb1f9fc5cdba"
+        "$oid": "659ed1925286b6b257aa9bbd"
       }
     }
   ],
@@ -46,45 +38,37 @@
 },
 {
   "_id": {
-    "$oid": "65810f5c6f33eb1f9fc5cdc8"
+    "$oid": "659ed1c25286b6b257aa9bd8"
   },
-  "shopperId": "6580ee7e8adc509ae5801a15",
+  "shopperId": "659ecf615286b6b257aa9abd",
   "shopperName": "Shopper 2",
-  "companyId": "657a5c9f1614d627b787604b",
+  "companyId": "659ecec25286b6b257aa9a83",
   "dueDate": {
-    "$date": "2023-12-25T00:00:00.000Z"
+    "$date": "2024-01-09T00:00:00.000Z"
   },
   "products": [
     {
-      "productId": "657a5c001614d627b7876028",
-      "productName": "Tomate verde kilo",
-      "value": 12,
+      "productId": "6595e02911552ee9bd0a6416",
+      "productName": "Aguacate criollo canastilla",
+      "value": 23000,
       "_id": {
-        "$oid": "65810f5c6f33eb1f9fc5cdc9"
+        "$oid": "659ed1c25286b6b257aa9bd9"
       }
     },
     {
       "productId": "657a5c461614d627b7876031",
       "productName": "Cebolla junca kilo",
-      "value": 12,
+      "value": 7600,
       "_id": {
-        "$oid": "65810f5c6f33eb1f9fc5cdca"
+        "$oid": "659ed1c25286b6b257aa9bda"
       }
     },
     {
       "productId": "657a5c1d1614d627b787602b",
       "productName": "Tomate verde canastilla",
-      "value": 12,
+      "value": 27500,
       "_id": {
-        "$oid": "65810f5c6f33eb1f9fc5cdcb"
-      }
-    },
-    {
-      "productId": "657a5c6f1614d627b787603a",
-      "productName": "Mango de azucar kilo",
-      "value": 12,
-      "_id": {
-        "$oid": "65810f5c6f33eb1f9fc5cdcc"
+        "$oid": "659ed1c25286b6b257aa9bdb"
       }
     }
   ],

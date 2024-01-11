@@ -7,7 +7,7 @@
   "name": "Webmaster",
   "phone": "300",
   "whatsapp": "300",
-  "status": "ON_HOLD",
+  "status": "ACTIVE",
   "type": "admin",
   "companies": [],
   "products": [],
@@ -15,20 +15,24 @@
 },
 {
   "_id": {
-    "$oid": "657a5c9f1614d627b787604b"
+    "$oid": "659ecec25286b6b257aa9a83"
   },
-  "address": "Calle 43",
-  "email": "company1@mail.com",
-  "name": "Empresa 1",
-  "phone": "301",
-  "whatsapp": "301",
+  "address": "Cra 32",
+  "email": "dann@mail.com",
+  "name": "Hotel Dann Carlton",
+  "nit": "1111",
+  "legalRep": "Andrés Plata",
+  "phone": "320",
+  "whatsapp": "320",
   "status": "ON_HOLD",
   "type": "company",
+  "deliveryTerms": "sdsdvdf",
+  "paymentTerms": "dfkjlsdkjfl",
   "companies": null,
   "products": [
     {
-      "id": "657a5c001614d627b7876028",
-      "name": "Tomate verde kilo"
+      "id": "6595e02911552ee9bd0a6416",
+      "name": "Aguacate criollo canastilla"
     },
     {
       "id": "657a5c461614d627b7876031",
@@ -37,56 +41,45 @@
     {
       "id": "657a5c1d1614d627b787602b",
       "name": "Tomate verde canastilla"
-    },
-    {
-      "id": "657a5c6f1614d627b787603a",
-      "name": "Mango de azucar kilo"
     }
   ],
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "657a5cb91614d627b787604d"
+    "$oid": "659ecf2d5286b6b257aa9aa9"
   },
-  "address": "Calle 44",
+  "address": "Calle 22",
   "email": "shopper1@mail.com",
   "name": "Shopper 1",
-  "phone": "302",
-  "whatsapp": "302",
+  "nit": "S1111",
+  "legalRep": "Iván Heredia",
+  "phone": "220",
+  "whatsapp": "220",
   "status": "ON_HOLD",
   "type": "shopper",
+  "deliveryTerms": "",
+  "paymentTerms": "",
   "companies": [],
   "products": null,
   "__v": 0
 },
 {
   "_id": {
-    "$oid": "6580cf2a69d49378ab66b476"
+    "$oid": "659ecf615286b6b257aa9abd"
   },
-  "address": "Calle 45",
-  "email": "company2@mail.com",
-  "name": "Empresa 2",
-  "phone": "305",
-  "whatsapp": "305",
-  "status": "ON_HOLD",
-  "type": "company",
-  "companies": null,
-  "products": [],
-  "__v": 0
-},
-{
-  "_id": {
-    "$oid": "6580ee7e8adc509ae5801a15"
-  },
-  "address": "Calle 46",
+  "address": "Calle 26",
   "email": "shopper2@mail.com",
   "name": "Shopper 2",
-  "phone": "306",
-  "whatsapp": "306",
+  "nit": "S2222",
+  "legalRep": "Carlos Valderrama",
+  "phone": "220 000 0000",
+  "whatsapp": "260 000 0000",
   "status": "ON_HOLD",
   "type": "shopper",
-  "companies": null,
-  "products": [],
+  "deliveryTerms": "",
+  "paymentTerms": "",
+  "companies": [],
+  "products": null,
   "__v": 0
 }]

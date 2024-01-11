@@ -1,0 +1,51 @@
+[{
+  "_id": {
+    "$oid": "659ed33553506012e565f9b4"
+  },
+  "products": [
+    {
+      "productId": "6595e02911552ee9bd0a6416",
+      "productName": "Aguacate criollo canastilla",
+      "price": 25000,
+      "quant": 8,
+      "total": 200000
+    },
+    {
+      "productId": "657a5c461614d627b7876031",
+      "productName": "Cebolla junca kilo",
+      "price": 8000,
+      "quant": 24,
+      "total": 192000
+    },
+    {
+      "productId": "657a5c1d1614d627b787602b",
+      "productName": "Tomate verde canastilla",
+      "price": 24000,
+      "quant": 3,
+      "total": 72000
+    }
+  ],
+  "total": 464000,
+  "shopperId": "659ecf2d5286b6b257aa9aa9",
+  "shopperName": "Shopper 1",
+  "shopperAddress": "Calle 22",
+  "shopperEmail": "shopper1@mail.com",
+  "shopperPhone": "220",
+  "shopperWhatsapp": "220",
+  "companyId": "659ecec25286b6b257aa9a83",
+  "companyName": "Hotel Dann Carlton",
+  "companyAddress": "Cra 32",
+  "companyEmail": "dann@mail.com",
+  "companyPhone": "320",
+  "companyWhatsapp": "320",
+  "deliveryTerms": "sdsdvdf",
+  "paymentTerms": "dfkjlsdkjfl",
+  "status": "CREATED",
+  "createdAt": {
+    "$date": "2024-01-10T17:26:13.910Z"
+  },
+  "updatedAt": {
+    "$date": "2024-01-10T17:26:13.910Z"
+  },
+  "__v": 0
+}]
